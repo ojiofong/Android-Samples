@@ -120,6 +120,7 @@ public class RecyclerPlayActivity extends AppCompatActivity {
         public boolean onActionItemClicked(ActionMode mode, MenuItem item) {
             switch (item.getItemId()) {
                 case R.id.delete:
+                    adapter.deleteSelectedPositions();
                     mode.finish();
                     return true;
 

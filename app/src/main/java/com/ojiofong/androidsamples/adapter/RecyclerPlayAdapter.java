@@ -101,6 +101,15 @@ public class RecyclerPlayAdapter extends SelectableAdapter<RecyclerPlayAdapter.M
         notifyItemChanged(position);
     }
 
+    public void deleteSelectedPositions() {
+        List<Integer> selected = getSelectedItems();
+        for (int i = selected.size() - 1; i >= 0; i--) {
+            String str = items.get(selected.get(i));
+            items.remove(str);
+            notifyItemRemoved(selected.get(i));
+        }
+    }
+
 
     class MyViewHolder extends RecyclerView.ViewHolder {
 

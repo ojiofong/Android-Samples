@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ojiofong.androidsamples.ui.BoundServiceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/bluetooth_enable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth enable" />
+
+
+        <Button
+            android:id="@+id/bluetooth_on"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth on" />
+
+
+        <Button
+            android:id="@+id/bluetooth_off"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth off" />
+
+        <Button
+            android:id="@+id/bluetooth_discoverable"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Bluetooth Discoverable" />
+
+        <Button
+            android:id="@+id/bluetooth_paired_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Get paired devices" />
+        <Button
+            android:id="@+id/bluetooth_discover_devices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Discover/Search for devices" />
+
+    </LinearLayout>
+
+
+</ScrollView>

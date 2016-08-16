@@ -81,14 +81,16 @@ public class RecyclerPlayActivity extends AppCompatActivity {
     public void onLongClickItemView(View v) {
         int pos = mRecyclerView.getChildAdapterPosition(v);
         if (pos == RecyclerView.NO_POSITION) return;
-        Toast.makeText(this, "long click " + pos, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "long click " + pos, Toast.LENGTH_SHORT).show();
 
         if (actionMode == null) {
             actionMode = startSupportActionMode(new MyActionModeCallBack());
         }
 
+        toggleSelection(pos);
 
     }
+
 
     private void toggleSelection(int position) {
         adapter.toggleSelection(position);

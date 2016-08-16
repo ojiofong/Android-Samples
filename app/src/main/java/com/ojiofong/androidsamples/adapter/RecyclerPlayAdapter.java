@@ -16,17 +16,12 @@ import com.yqritc.recyclerviewflexibledivider.VerticalDividerItemDecoration;
 import java.util.ArrayList;
 import java.util.List;
 
-public class RecyclerPlayAdapter extends RecyclerView.Adapter<RecyclerPlayAdapter.MyViewHolder> {
+public class RecyclerPlayAdapter extends SelectableAdapter<RecyclerPlayAdapter.MyViewHolder> {
     private static final String TAG = RecyclerPlayAdapter.class.getSimpleName();
 
     private List<String> items = new ArrayList<>();
     private Context context;
     private RecyclerPlayActivity recyclerPlayActivity;
-
-//    public RecyclerPlayAdapter(Context context, List<String> items) {
-//        this.items.addAll(items);
-//        this.context = context;
-//    }
 
 
     public RecyclerPlayAdapter(RecyclerPlayActivity recyclerPlayActivity, List<String> items) {
@@ -79,6 +74,8 @@ public class RecyclerPlayAdapter extends RecyclerView.Adapter<RecyclerPlayAdapte
 
                 holder.tv1.setText(items.get(position));
 
+                holder.itemView.setBackgroundColor(isSelected(position) ? Color.GRAY : Color.TRANSPARENT);
+
                 break;
         }
     }
@@ -105,17 +102,17 @@ public class RecyclerPlayAdapter extends RecyclerView.Adapter<RecyclerPlayAdapte
     }
 
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    class MyViewHolder extends RecyclerView.ViewHolder {
 
-        public TextView tv1;
-        public RecyclerView mRecyclerView;
+        TextView tv1;
+        RecyclerView mRecyclerView;
 
-        public MyViewHolder(View itemView) {
+        MyViewHolder(View itemView) {
             super(itemView);
             // item
             tv1 = (TextView) itemView.findViewById(R.id.tvHelloWorld);
 
-            // itemX
+            // item Horizontal
             mRecyclerView = (RecyclerView) itemView.findViewById(R.id.recyclerViewX);
             if (mRecyclerView != null) {
                 mRecyclerView.setHasFixedSize(true);
@@ -131,5 +128,6 @@ public class RecyclerPlayAdapter extends RecyclerView.Adapter<RecyclerPlayAdapte
 
         }
     }
+
 
 }

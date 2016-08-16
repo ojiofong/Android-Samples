@@ -9,6 +9,10 @@
 
         <!--Allows window animations-->
         <item name="android:windowContentTransitions">true</item>
+
+
+        <!--For ActionMode overlay on toolbar-->
+        <item name="windowActionModeOverlay">true</item>
     </style>
 
 </resources>

@@ -47,6 +47,8 @@
         <activity android:name="com.ojiofong.androidsamples.ui.BoundServiceActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.BluetoothActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.WebRTCActivity"/>
+        <activity android:name="com.ojiofong.androidsamples.ui.ThreadPoolActivity"/>
+        <activity android:name="com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity"/>
 
         <!--Service-->
         <service android:name="com.ojiofong.androidsamples.service.TestService"/>

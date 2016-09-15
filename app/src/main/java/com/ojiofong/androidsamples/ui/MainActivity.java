@@ -8,7 +8,12 @@ import android.support.v7.widget.RecyclerView;
 import com.ojiofong.androidsamples.CutomItemDecoration;
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.adapter.MainAdapter;
-import com.ojiofong.mylibrary.LibControl;
+
+import java.io.IOException;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -28,10 +33,11 @@ public class MainActivity extends AppCompatActivity {
             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
             mRecyclerView.setLayoutManager(mLayoutManager);
             mRecyclerView.setAdapter(new MainAdapter(this, getItems()));
-            mRecyclerView.setBackgroundColor(LibControl.OJI_GREEN);
+//            mRecyclerView.setBackgroundColor(LibControl.OJI_GREEN);
 
         }
     }
+
 
     private String[] getItems() {
 
@@ -39,7 +45,8 @@ public class MainActivity extends AppCompatActivity {
                 "Sensor", "RxJava", "Video", "Constraint",
                 "RecyclerPlay", "Animation", "Dagger",
                 "ButterKnife", "BoundServiceActivity",
-                "Bluetooth", "WebRTC"
+                "Bluetooth", "WebRTC", "ThreadPoolExecutor",
+                "AsyncTaskLoader"
         };
     }
 

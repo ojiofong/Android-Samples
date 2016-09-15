@@ -1,9 +1,13 @@
 package com.ojiofong.androidsamples.ui;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.transition.Fade;
 import android.transition.Slide;
+import android.view.Gravity;
+import android.view.View;
 
 import com.ojiofong.androidsamples.R;
 
@@ -18,14 +22,23 @@ public class ConstraintActivity extends AppCompatActivity {
     }
 
     private void setupWindowAnimationFade() {
-        Fade fade = new Fade();
-        fade.setDuration(1000);
-        getWindow().setEnterTransition(fade);
-
+//        Fade fade = new Fade();
+//        fade.setDuration(1000);
+//        getWindow().setEnterTransition(fade);
 
         Slide slide = new Slide();
-        fade.setDuration(1000);
-        getWindow().setReturnTransition(slide);
+        slide.setDuration(300);
+        slide.setSlideEdge(Gravity.END);
+        slide.excludeTarget(android.R.id.statusBarBackground, true);
+        //getWindow().setReturnTransition(slide);
+        getWindow().setEnterTransition(slide);
+        getWindow().setExitTransition(slide);
+    }
+
+    public void doSomething(View v){
+        String url = "http://ojiofong.com/android/arounda/";
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        startActivity(intent);
     }
 
 }

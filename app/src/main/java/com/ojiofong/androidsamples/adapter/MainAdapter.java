@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.ui.AnimationActivity;
+import com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity;
 import com.ojiofong.androidsamples.ui.BluetoothActivity;
 import com.ojiofong.androidsamples.ui.BluetoothActivity2;
 import com.ojiofong.androidsamples.ui.BoundServiceActivity;
@@ -19,6 +20,7 @@ import com.ojiofong.androidsamples.ui.DaggerActivity;
 import com.ojiofong.androidsamples.ui.RecyclerPlayActivity;
 import com.ojiofong.androidsamples.ui.RxJavaActivity;
 import com.ojiofong.androidsamples.ui.SensorActivity;
+import com.ojiofong.androidsamples.ui.ThreadPoolActivity;
 import com.ojiofong.androidsamples.ui.VideoActivity;
 import com.ojiofong.androidsamples.ui.WebRTCActivity;
 
@@ -111,6 +113,12 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 break;
             case 10:
                 context.startActivity(new Intent(context, WebRTCActivity.class));
+                break;
+            case 11:
+                context.startActivity(new Intent(context, ThreadPoolActivity.class));
+                break;
+            case 12:
+                context.startActivity(new Intent(context, AsyncTaskLoaderActivity.class));
                 break;
         }
     }

@@ -1,6 +1,5 @@
 package com.ojiofong.androidsamples.ui;
 
-import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.view.ActionMode;
@@ -81,7 +80,6 @@ public class RecyclerPlayActivity extends AppCompatActivity {
     public void onLongClickItemView(View v) {
         int pos = mRecyclerView.getChildAdapterPosition(v);
         if (pos == RecyclerView.NO_POSITION) return;
-        //Toast.makeText(this, "long click " + pos, Toast.LENGTH_SHORT).show();
 
         if (actionMode == null) {
             actionMode = startSupportActionMode(new MyActionModeCallBack());

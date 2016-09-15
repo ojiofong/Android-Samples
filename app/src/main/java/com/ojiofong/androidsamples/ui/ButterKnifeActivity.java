@@ -35,7 +35,6 @@ public class ButterKnifeActivity extends AppCompatActivity {
 //            // do something here
 //        });
 
-
     }
 
     @OnClick(R.id.ivPointer) void onClickImage(){

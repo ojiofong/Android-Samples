@@ -49,6 +49,7 @@
         <activity android:name="com.ojiofong.androidsamples.ui.WebRTCActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.ThreadPoolActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity"/>
+        <activity android:name="com.ojiofong.androidsamples.ui.InputDetectionActivity"/>
 
         <!--Service-->
         <service android:name="com.ojiofong.androidsamples.service.TestService"/>

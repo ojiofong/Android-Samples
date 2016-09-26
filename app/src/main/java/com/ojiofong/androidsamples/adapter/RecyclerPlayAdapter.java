@@ -19,15 +19,18 @@ import java.util.List;
 public class RecyclerPlayAdapter extends SelectableAdapter<RecyclerPlayAdapter.MyViewHolder> {
     private static final String TAG = RecyclerPlayAdapter.class.getSimpleName();
 
+    String[] testItems = { "horizontal 0", "horizontal 1", "horizontal 2", "horizontal 3", "horizontal 4"};
     private List<String> items = new ArrayList<>();
     private Context context;
     private RecyclerPlayActivity recyclerPlayActivity;
+    private HorizontalAdapter horizontalAdapter;
 
 
     public RecyclerPlayAdapter(RecyclerPlayActivity recyclerPlayActivity, List<String> items) {
         this.items = items;
         this.recyclerPlayActivity = recyclerPlayActivity;
         this.context = recyclerPlayActivity;
+        horizontalAdapter = new HorizontalAdapter(recyclerPlayActivity, testItems);
     }
 
     @Override
@@ -66,8 +69,8 @@ public class RecyclerPlayAdapter extends SelectableAdapter<RecyclerPlayAdapter.M
 
             case R.layout.item_recyclerview_x:
                 // set up recyclerView
-                String[] itemsX = {"Sensor", "RxJava", "Video", "Constraint", "RecyclerPlay"};
-                holder.mRecyclerView.setAdapter(new HorizontalAdapter(context, itemsX));
+                //holder.mRecyclerView.setAdapter(horizontalAdapter);
+                horizontalAdapter.notifyDataSetChanged();
                 break;
 
             case R.layout.item:
@@ -133,6 +136,7 @@ public class RecyclerPlayAdapter extends SelectableAdapter<RecyclerPlayAdapter.M
                                 .build());
                 RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false);
                 mRecyclerView.setLayoutManager(mLayoutManager);
+                mRecyclerView.setAdapter(horizontalAdapter);
             }
 
         }

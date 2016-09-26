@@ -8,15 +8,15 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.ui.AnimationActivity;
 import com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity;
 import com.ojiofong.androidsamples.ui.BluetoothActivity;
-import com.ojiofong.androidsamples.ui.BluetoothActivity2;
 import com.ojiofong.androidsamples.ui.BoundServiceActivity;
 import com.ojiofong.androidsamples.ui.ButterKnifeActivity;
 import com.ojiofong.androidsamples.ui.ConstraintActivity;
-import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.ui.DaggerActivity;
+import com.ojiofong.androidsamples.ui.InputDetectionActivity;
 import com.ojiofong.androidsamples.ui.RecyclerPlayActivity;
 import com.ojiofong.androidsamples.ui.RxJavaActivity;
 import com.ojiofong.androidsamples.ui.SensorActivity;
@@ -119,6 +119,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 break;
             case 12:
                 context.startActivity(new Intent(context, AsyncTaskLoaderActivity.class));
+                break;
+            case 13:
+                context.startActivity(new Intent(context, InputDetectionActivity.class));
                 break;
         }
     }

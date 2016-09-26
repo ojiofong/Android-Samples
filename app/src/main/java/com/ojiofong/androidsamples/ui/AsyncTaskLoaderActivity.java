@@ -40,16 +40,6 @@ public class AsyncTaskLoaderActivity extends AppCompatActivity implements Loader
         Log.d(TAG, "oncreate done ");
     }
 
-    private String[] getItems() {
-
-        return new String[]{
-                "Sensor", "RxJava", "Video", "Constraint",
-                "RecyclerPlay", "Animation", "Dagger",
-                "ButterKnife", "BoundServiceActivity",
-                "Bluetooth", "WebRTC", "ThreadPoolExecutor"
-        };
-    }
-
     private static String getFromWeb() {
         try {
             String url = "https://api.github.com/search/users?q=tom";
@@ -92,7 +82,6 @@ public class AsyncTaskLoaderActivity extends AppCompatActivity implements Loader
         public MyAsyncTaskLoader(Context context) {
             super(context);
             forceLoad();
-            onContentChanged();
             Log.d(TAG, "constructor of MyAsyncTaskLoader ");
         }
 

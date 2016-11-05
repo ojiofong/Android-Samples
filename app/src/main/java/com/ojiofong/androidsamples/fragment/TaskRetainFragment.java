@@ -73,6 +73,16 @@ public class TaskRetainFragment extends Fragment {
         //myTask.cancel(true);
     }
 
+    /**
+     * Not called in orientation change
+     * Called once when finally destroyed.
+     */
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        myTask.cancel(true);
+        myTask = null;
+    }
 
     /**
      * Note - check if the mCallBack is null in each

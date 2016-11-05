@@ -67,7 +67,6 @@ public class RxJavaActivity extends AppCompatActivity {
 
         String url = "https://api.github.com/search/users?q=tom";
 
-
         OkHttpClient client = new OkHttpClient();
 
         Request request = new Request.Builder()

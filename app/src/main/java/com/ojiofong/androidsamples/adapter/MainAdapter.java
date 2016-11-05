@@ -18,6 +18,7 @@ import com.ojiofong.androidsamples.ui.ConstraintActivity;
 import com.ojiofong.androidsamples.ui.DaggerActivity;
 import com.ojiofong.androidsamples.ui.InputDetectionActivity;
 import com.ojiofong.androidsamples.ui.RecyclerPlayActivity;
+import com.ojiofong.androidsamples.ui.RetainAsyncTaskActivity;
 import com.ojiofong.androidsamples.ui.RxJavaActivity;
 import com.ojiofong.androidsamples.ui.SensorActivity;
 import com.ojiofong.androidsamples.ui.ThreadPoolActivity;
@@ -122,6 +123,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 break;
             case 13:
                 context.startActivity(new Intent(context, InputDetectionActivity.class));
+                break;
+            case 14:
+                context.startActivity(new Intent(context, RetainAsyncTaskActivity.class));
                 break;
         }
     }

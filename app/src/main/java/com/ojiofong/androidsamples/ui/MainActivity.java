@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 "RecyclerPlay", "Animation", "Dagger",
                 "ButterKnife", "BoundServiceActivity",
                 "Bluetooth", "WebRTC", "ThreadPoolExecutor",
-                "AsyncTaskLoader", "InputDetection"
+                "AsyncTaskLoader", "InputDetection", "RetainAsyncTask"
         };
     }
 

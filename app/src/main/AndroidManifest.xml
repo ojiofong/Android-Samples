@@ -30,7 +30,6 @@
         <activity android:name="com.ojiofong.androidsamples.ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -50,6 +49,7 @@
         <activity android:name="com.ojiofong.androidsamples.ui.ThreadPoolActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.InputDetectionActivity"/>
+        <activity android:name="com.ojiofong.androidsamples.ui.RetainAsyncTaskActivity"/>
 
         <!--Service-->
         <service android:name="com.ojiofong.androidsamples.service.TestService"/>

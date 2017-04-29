@@ -35,22 +35,23 @@
         </activity>
 
         <!--Activity-->
-        <activity android:name="com.ojiofong.androidsamples.ui.SensorActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.RxJavaActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.VideoActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.ConstraintActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.RecyclerPlayActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.AnimationActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.DaggerActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.ButterKnifeActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.BoundServiceActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.BluetoothActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.WebRTCActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.ThreadPoolActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.InputDetectionActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.RetainAsyncTaskActivity"/>
-        <activity android:name="com.ojiofong.androidsamples.ui.ViewPagerActivity"/>
+        <activity android:name=".ui.SensorActivity"/>
+        <activity android:name=".ui.RxJavaActivity"/>
+        <activity android:name=".ui.VideoActivity"/>
+        <activity android:name=".ui.ConstraintActivity"/>
+        <activity android:name=".ui.RecyclerPlayActivity"/>
+        <activity android:name=".ui.AnimationActivity"/>
+        <activity android:name=".ui.DaggerActivity"/>
+        <activity android:name=".ui.ButterKnifeActivity"/>
+        <activity android:name=".ui.BoundServiceActivity"/>
+        <activity android:name=".ui.BluetoothActivity"/>
+        <activity android:name=".ui.WebRTCActivity"/>
+        <activity android:name=".ui.ThreadPoolActivity"/>
+        <activity android:name=".ui.AsyncTaskLoaderActivity"/>
+        <activity android:name=".ui.InputDetectionActivity"/>
+        <activity android:name=".ui.RetainAsyncTaskActivity"/>
+        <activity android:name=".ui.ViewPagerActivity"/>
+        <activity android:name=".ui.MVPActivity"/>
 
         <!--Service-->
         <service android:name="com.ojiofong.androidsamples.service.TestService"/>

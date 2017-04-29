@@ -17,6 +17,7 @@ import com.ojiofong.androidsamples.ui.ButterKnifeActivity;
 import com.ojiofong.androidsamples.ui.ConstraintActivity;
 import com.ojiofong.androidsamples.ui.DaggerActivity;
 import com.ojiofong.androidsamples.ui.InputDetectionActivity;
+import com.ojiofong.androidsamples.ui.MVPActivity;
 import com.ojiofong.androidsamples.ui.RecyclerPlayActivity;
 import com.ojiofong.androidsamples.ui.RetainAsyncTaskActivity;
 import com.ojiofong.androidsamples.ui.RxJavaActivity;
@@ -130,6 +131,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 break;
             case 15:
                 context.startActivity(new Intent(context, ViewPagerActivity.class));
+                break;
+            case 16:
+                context.startActivity(new Intent(context, MVPActivity.class));
                 break;
         }
     }

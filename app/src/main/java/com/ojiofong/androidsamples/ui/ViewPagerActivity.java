@@ -2,6 +2,7 @@ package com.ojiofong.androidsamples.ui;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -33,6 +34,10 @@ public class ViewPagerActivity extends AppCompatActivity {
         myPagerAdaper = new MyPagerAdaper(getSupportFragmentManager(), pages);
         viewPager = (ViewPager) findViewById(R.id.viewpager1);
         viewPager.setAdapter(myPagerAdaper);
+
+        // Optionally setup with tabLayout
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout1);
+        tabLayout.setupWithViewPager(viewPager);
     }
 
     public static class MyPagerAdaper extends FragmentPagerAdapter {
@@ -56,6 +61,11 @@ public class ViewPagerActivity extends AppCompatActivity {
         @Override
         public int getCount() {
             return pages.length;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            return pages[position];
         }
     }
 

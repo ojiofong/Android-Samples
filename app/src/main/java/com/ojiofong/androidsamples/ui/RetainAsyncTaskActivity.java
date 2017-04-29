@@ -22,7 +22,7 @@ public class RetainAsyncTaskActivity extends AppCompatActivity implements TaskRe
 
         FragmentManager fm = getSupportFragmentManager();
         TaskRetainFragment taskRetainFragment = (TaskRetainFragment) fm.findFragmentByTag(TAG_FRAGMENT);
-        if (taskRetainFragment == null || savedInstanceState == null) {
+        if (taskRetainFragment == null) {
             taskRetainFragment = TaskRetainFragment.newInstance("Awesome input");
             fm.beginTransaction().add(taskRetainFragment, TAG_FRAGMENT).commit();
         }

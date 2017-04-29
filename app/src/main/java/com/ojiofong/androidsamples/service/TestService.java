@@ -9,6 +9,7 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 import android.os.Messenger;
+import android.os.RemoteException;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.widget.Toast;
@@ -22,6 +23,7 @@ public class TestService extends Service {
      * interface for clients that bind
      */
     private IBinder mBinder = new MyBinder();
+
     /**
      * Target we publish for clients to send messages to IncomingHandler.
      */
@@ -36,10 +38,13 @@ public class TestService extends Service {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                Looper.prepare();
                 for (int i = 0; i < 3; i++) {
-                    Log.d(TAG, "Doing some work in worker thread");
-                    Looper.prepare();
-                    messenger = new Messenger(new IncomingHander(getApplicationContext()));
+                    Log.d(TAG, "Doing some work in worker thread " + i);
+
+                    // IncomingHandler is associated with the thread in which it was created
+                    messenger = new Messenger(new IncomingHander(TestService.this));
+                    //Looper.myLooper().quitSafely();
                     Looper.loop();
                 }
             }
@@ -87,6 +92,8 @@ public class TestService extends Service {
 
     /**
      * Handler of incoming messages from clients.
+     * Associated with the Thread in which it's instance is created
+     * Here it is new Thread() in Oncreate()
      */
     static class IncomingHander extends Handler {
         Context context;
@@ -100,7 +107,16 @@ public class TestService extends Service {
             super.handleMessage(msg);
             switch (msg.what) {
                 case SAY_HELLO:
-                    Toast.makeText(context, "Hello Message", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Service: Hello Message", Toast.LENGTH_SHORT).show();
+
+                    //Send Message back to Activity
+                    // msg.replyTo = messengerForActivityHandler
+                    try {
+                        Message message = Message.obtain(Message.obtain(null, 77, "bro"));
+                        msg.replyTo.send(message);
+                    } catch (RemoteException e) {
+                        e.printStackTrace();
+                    }
                     break;
             }
 

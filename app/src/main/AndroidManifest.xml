@@ -50,6 +50,7 @@
         <activity android:name="com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.InputDetectionActivity"/>
         <activity android:name="com.ojiofong.androidsamples.ui.RetainAsyncTaskActivity"/>
+        <activity android:name="com.ojiofong.androidsamples.ui.ViewPagerActivity"/>
 
         <!--Service-->
         <service android:name="com.ojiofong.androidsamples.service.TestService"/>

@@ -98,6 +98,8 @@ public class ThreadPoolActivity2 extends AppCompatActivity {
         Executor mExecutor = Executors.newSingleThreadExecutor();
         mExecutor.execute(mRunnable);
 
+        
+
         ExecutorService mExecutorService = Executors.newFixedThreadPool(10);
         mExecutorService.execute(mRunnable);
     }

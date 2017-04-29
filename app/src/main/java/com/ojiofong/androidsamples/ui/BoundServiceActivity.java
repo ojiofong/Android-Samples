@@ -4,6 +4,7 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.content.ServiceConnection;
 import android.os.Bundle;
+import android.os.Handler;
 import android.os.IBinder;
 import android.os.Message;
 import android.os.Messenger;
@@ -101,6 +102,7 @@ public class BoundServiceActivity extends AppCompatActivity {
     public void sendMessageToService() {
         if (isBound()){
             Message msg = Message.obtain(null, TestService.SAY_HELLO, 0, 0);
+            msg.replyTo = messengerForActivityHandler;
             try {
                 mMessanger.send(msg);
             } catch (RemoteException e) {
@@ -108,4 +110,14 @@ public class BoundServiceActivity extends AppCompatActivity {
             }
         }
     }
+
+    // To receive messages on the activity
+    private class ActivityHandler extends Handler{
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            Toast.makeText(BoundServiceActivity.this, "Activity: handleMessage " + msg.obj, Toast.LENGTH_SHORT).show();
+        }
+    }
+    Messenger messengerForActivityHandler = new Messenger(new ActivityHandler());
 }

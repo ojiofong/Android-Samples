@@ -23,6 +23,7 @@ import com.ojiofong.androidsamples.ui.RxJavaActivity;
 import com.ojiofong.androidsamples.ui.SensorActivity;
 import com.ojiofong.androidsamples.ui.ThreadPoolActivity;
 import com.ojiofong.androidsamples.ui.VideoActivity;
+import com.ojiofong.androidsamples.ui.ViewPagerActivity;
 import com.ojiofong.androidsamples.ui.WebRTCActivity;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> {
@@ -126,6 +127,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
                 break;
             case 14:
                 context.startActivity(new Intent(context, RetainAsyncTaskActivity.class));
+                break;
+            case 15:
+                context.startActivity(new Intent(context, ViewPagerActivity.class));
                 break;
         }
     }

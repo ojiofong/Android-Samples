@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
                 "ButterKnife", "BoundServiceActivity",
                 "Bluetooth", "WebRTC", "ThreadPoolExecutor",
                 "AsyncTaskLoader", "InputDetection", "RetainAsyncTask", "ViewPager",
-                "MVP"
+                "MVP", "Fragment/DialogFragment"
         };
     }
 

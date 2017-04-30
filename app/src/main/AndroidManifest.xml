@@ -52,6 +52,7 @@
         <activity android:name=".ui.RetainAsyncTaskActivity"/>
         <activity android:name=".ui.ViewPagerActivity"/>
         <activity android:name=".ui.MVPActivity"/>
+        <activity android:name=".ui.FragmentSampleActivity"/>
 
         <!--Service-->
         <service android:name="com.ojiofong.androidsamples.service.TestService"/>

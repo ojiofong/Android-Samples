@@ -15,7 +15,7 @@ import com.ojiofong.androidsamples.ui.BluetoothActivity;
 import com.ojiofong.androidsamples.ui.BoundServiceActivity;
 import com.ojiofong.androidsamples.ui.ButterKnifeActivity;
 import com.ojiofong.androidsamples.ui.ConstraintActivity;
-import com.ojiofong.androidsamples.ui.DaggerActivity;
+import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.ui.FragmentSampleActivity;
 import com.ojiofong.androidsamples.ui.InputDetectionActivity;
 import com.ojiofong.androidsamples.ui.MVPActivity;

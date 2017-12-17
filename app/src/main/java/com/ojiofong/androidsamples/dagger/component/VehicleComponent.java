@@ -1,8 +1,8 @@
 package com.ojiofong.androidsamples.dagger.component;
 
 
-import com.ojiofong.androidsamples.dagger.model.Vehicle;
 import com.ojiofong.androidsamples.dagger.module.VehicleModule;
+import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 
 import javax.inject.Singleton;
 
@@ -16,6 +16,5 @@ import dagger.Component;
 @Singleton
 @Component(modules = {VehicleModule.class})
 public interface VehicleComponent {
-
-    Vehicle providesVehicle();
+    void inject(DaggerActivity daggerActivity);
 }

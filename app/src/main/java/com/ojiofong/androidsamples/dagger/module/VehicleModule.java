@@ -17,13 +17,13 @@ import dagger.Provides;
 public class VehicleModule {
 
     @Provides @Singleton
-    Motor provideMotor(){
+    Motor providesMotor(){
         return new Motor();
     }
 
     @Provides @Singleton
-    Vehicle provideVehicle(){
-        return new Vehicle(new Motor());
+    Vehicle providesVehicle(Motor motor){
+        return new Vehicle(motor);
     }
 
 

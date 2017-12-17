@@ -41,7 +41,7 @@
         <activity android:name=".ui.ConstraintActivity"/>
         <activity android:name=".ui.RecyclerPlayActivity"/>
         <activity android:name=".ui.AnimationActivity"/>
-        <activity android:name=".ui.DaggerActivity"/>
+        <activity android:name=".dagger.ui.DaggerActivity"/>
         <activity android:name=".ui.ButterKnifeActivity"/>
         <activity android:name=".ui.BoundServiceActivity"/>
         <activity android:name=".ui.BluetoothActivity"/>

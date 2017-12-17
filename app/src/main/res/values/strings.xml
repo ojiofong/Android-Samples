@@ -1,13 +1,31 @@
 <resources>
-    <string name="app_name">AndroidSamples</string>
+    <string name="app_name">Android Samples</string>
     <string name="the_quick">The quick brown fox jumps over the lazy</string>
     <string name="click_here">Click Here</string>
-
-
-
     <string name="Text">Status: -</string>
     <string name="on">Turn On</string>
     <string name="off">Turn Off</string>
     <string name="List">List paired Devices</string>
     <string name="Find">Search new Devices / Cancel</string>
+
+    <!--Strings for main recyclerview-->
+    <string name="sensor">Sensor</string>
+    <string name="rx_java">RxJava</string>
+    <string name="video">Video</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="recycler_play">RecyclerPlay</string>
+    <string name="animation">Animation</string>
+    <string name="dagger">Dagger</string>
+    <string name="butter_knife">ButterKnife</string>
+    <string name="bound_service">Bound Service</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="web_rtc">WebRTC</string>
+    <string name="thread_pool_executor">ThreadPoolExecutor</string>
+    <string name="async_task_loader">AsyncTaskLoader</string>
+    <string name="input_detection">InputDetection</string>
+    <string name="retain_async_task">RetainAsyncTask</string>
+    <string name="view_pager">ViewPager</string>
+    <string name="mvp">MVP</string>
+    <string name="fragment_dialog_fragment">Fragment/DialogFragment</string>
+
 </resources>

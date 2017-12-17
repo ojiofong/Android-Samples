@@ -31,25 +31,22 @@ import com.ojiofong.androidsamples.ui.WebRTCActivity;
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> {
     private static final String TAG = MainAdapter.class.getSimpleName();
 
-    String[] items;
-    Context context;
+    private String[] items;
+    private Context context;
 
-    public MainAdapter(Context context, String[] items){
+    public MainAdapter(Context context, String[] items) {
         this.items = items;
         this.context = context;
     }
 
     @Override
     public int getItemViewType(int position) {
-       // return super.getItemViewType(position);
         return R.layout.item;
     }
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-
         View v = LayoutInflater.from(parent.getContext()).inflate(viewType, parent, false);
-
         return new MyViewHolder(v);
     }
 
@@ -60,85 +57,64 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             @Override
             public void onClick(View v) {
                 int pos = holder.getAdapterPosition();
-                launchActivity(pos);
-                //Toast.makeText(context, "pos " + pos, Toast.LENGTH_SHORT).show();
+                launchActivity(items[pos]);
             }
         });
     }
-
 
     @Override
     public int getItemCount() {
         return items.length;
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
+    private void launchActivity(String title) {
 
-       public TextView tv1;
-
-        public MyViewHolder(View itemView) {
-            super(itemView);
-            tv1 = (TextView) itemView.findViewById(R.id.tvHelloWorld);
+        if (title.equals(context.getString(R.string.sensor))) {
+            context.startActivity(new Intent(context, SensorActivity.class));
+        } else if (title.equals(context.getString(R.string.rx_java))) {
+            context.startActivity(new Intent(context, RxJavaActivity.class));
+        } else if (title.equals(context.getString(R.string.video))) {
+            context.startActivity(new Intent(context, VideoActivity.class));
+        } else if (title.equals(context.getString(R.string.constraint_layout))) {
+            context.startActivity(new Intent(context, ConstraintActivity.class));
+        } else if (title.equals(context.getString(R.string.recycler_play))) {
+            context.startActivity(new Intent(context, RecyclerPlayActivity.class));
+        } else if (title.equals(context.getString(R.string.animation))) {
+            context.startActivity(new Intent(context, AnimationActivity.class));
+        } else if (title.equals(context.getString(R.string.dagger))) {
+            context.startActivity(new Intent(context, DaggerActivity.class));
+        } else if (title.equals(context.getString(R.string.butter_knife))) {
+            context.startActivity(new Intent(context, ButterKnifeActivity.class));
+        } else if (title.equals(context.getString(R.string.bound_service))) {
+            context.startActivity(new Intent(context, BoundServiceActivity.class));
+        } else if (title.equals(context.getString(R.string.bluetooth))) {
+            context.startActivity(new Intent(context, BluetoothActivity.class));
+        } else if (title.equals(context.getString(R.string.web_rtc))) {
+            context.startActivity(new Intent(context, WebRTCActivity.class));
+        } else if (title.equals(context.getString(R.string.thread_pool_executor))) {
+            context.startActivity(new Intent(context, ThreadPoolActivity.class));
+        } else if (title.equals(context.getString(R.string.async_task_loader))) {
+            context.startActivity(new Intent(context, AsyncTaskLoaderActivity.class));
+        } else if (title.equals(context.getString(R.string.input_detection))) {
+            context.startActivity(new Intent(context, InputDetectionActivity.class));
+        } else if (title.equals(context.getString(R.string.retain_async_task))) {
+            context.startActivity(new Intent(context, RetainAsyncTaskActivity.class));
+        } else if (title.equals(context.getString(R.string.view_pager))) {
+            context.startActivity(new Intent(context, ViewPagerActivity.class));
+        } else if (title.equals(context.getString(R.string.mvp))) {
+            context.startActivity(new Intent(context, MVPActivity.class));
+        } else if (title.equals(context.getString(R.string.fragment_dialog_fragment))) {
+            context.startActivity(new Intent(context, FragmentSampleActivity.class));
         }
+
     }
 
+    static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView tv1;
 
-    private void launchActivity(int pos){
-        switch (pos){
-            case 0:
-                context.startActivity(new Intent(context, SensorActivity.class));
-                break;
-            case 1:
-                context.startActivity(new Intent(context, RxJavaActivity.class));
-                break;
-            case 2:
-                context.startActivity(new Intent(context, VideoActivity.class));
-                break;
-            case 3:
-                context.startActivity(new Intent(context, ConstraintActivity.class));
-                break;
-            case 4:
-                context.startActivity(new Intent(context, RecyclerPlayActivity.class));
-                break;
-            case 5:
-                context.startActivity(new Intent(context, AnimationActivity.class));
-                break;
-            case 6:
-                context.startActivity(new Intent(context, DaggerActivity.class));
-                break;
-            case 7:
-                context.startActivity(new Intent(context, ButterKnifeActivity.class));
-                break;
-            case 8:
-                context.startActivity(new Intent(context, BoundServiceActivity.class));
-                break;
-            case 9:
-                context.startActivity(new Intent(context, BluetoothActivity.class));
-                break;
-            case 10:
-                context.startActivity(new Intent(context, WebRTCActivity.class));
-                break;
-            case 11:
-                context.startActivity(new Intent(context, ThreadPoolActivity.class));
-                break;
-            case 12:
-                context.startActivity(new Intent(context, AsyncTaskLoaderActivity.class));
-                break;
-            case 13:
-                context.startActivity(new Intent(context, InputDetectionActivity.class));
-                break;
-            case 14:
-                context.startActivity(new Intent(context, RetainAsyncTaskActivity.class));
-                break;
-            case 15:
-                context.startActivity(new Intent(context, ViewPagerActivity.class));
-                break;
-            case 16:
-                context.startActivity(new Intent(context, MVPActivity.class));
-                break;
-            case 17:
-                context.startActivity(new Intent(context, FragmentSampleActivity.class));
-                break;
+        MyViewHolder(View itemView) {
+            super(itemView);
+            tv1 = (TextView) itemView.findViewById(R.id.tvHelloWorld);
         }
     }
 }

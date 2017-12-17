@@ -10,6 +10,7 @@ import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.adapter.MainAdapter;
 
 import java.io.IOException;
+import java.util.Arrays;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
@@ -41,14 +42,16 @@ public class MainActivity extends AppCompatActivity {
 
     private String[] getItems() {
 
-        return new String[]{
-                "Sensor", "RxJava", "Video", "Constraint",
-                "RecyclerPlay", "Animation", "Dagger",
-                "ButterKnife", "BoundServiceActivity",
-                "Bluetooth", "WebRTC", "ThreadPoolExecutor",
-                "AsyncTaskLoader", "InputDetection", "RetainAsyncTask", "ViewPager",
-                "MVP", "Fragment/DialogFragment"
-        };
+        String[] items = {getString(R.string.sensor), getString(R.string.rx_java), getString(R.string.video)
+        , getString(R.string.constraint_layout), getString(R.string.animation), getString(R.string.dagger)
+        , getString(R.string.butter_knife), getString(R.string.bound_service), getString(R.string.bluetooth)
+        , getString(R.string.web_rtc), getString(R.string.thread_pool_executor), getString(R.string.async_task_loader)
+        , getString(R.string.input_detection), getString(R.string.retain_async_task), getString(R.string.view_pager)
+        , getString(R.string.mvp), getString(R.string.fragment_dialog_fragment)};
+
+        Arrays.sort(items);
+
+        return items;
     }
 
 

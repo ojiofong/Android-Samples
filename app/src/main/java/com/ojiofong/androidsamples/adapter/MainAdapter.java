@@ -11,7 +11,7 @@ import android.widget.TextView;
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
-import com.ojiofong.androidsamples.room.RoomActivity;
+import com.ojiofong.androidsamples.room.ui.RoomActivity;
 import com.ojiofong.androidsamples.ui.AnimationActivity;
 import com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity;
 import com.ojiofong.androidsamples.ui.BluetoothActivity;

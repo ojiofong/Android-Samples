@@ -10,7 +10,7 @@ android {
     buildToolsVersion "26.0.2"
 
     defaultConfig {
-        applicationId "com.ojiofong.androidsensor"
+        applicationId "com.ojiofong.androidsamples"
         minSdkVersion 21
         targetSdkVersion 26
         versionCode 1
@@ -31,7 +31,7 @@ dependencies {
 
     // android
 
-    androidTestCompile ('com.android.support.test.espresso:espresso-core:2.2.2'){
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2') {
         exclude module: 'support-annotations'
     }
     testCompile 'junit:junit:4.12'
@@ -39,7 +39,6 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:26.1.0'
     compile 'com.android.support:design:26.1.0'
     compile 'com.android.support.constraint:constraint-layout:1.1.0-beta4'
-
 
     // others
 
@@ -54,6 +53,8 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'io.pristine:libjingle:9694@aar' // webRTC
     compile 'org.apache.commons:commons-lang3:3.4'
-
 //    compile project (':oj-color')
+
+    // LiveData and ViewModel
+    compile "android.arch.lifecycle:extensions:1.0.0"
 }

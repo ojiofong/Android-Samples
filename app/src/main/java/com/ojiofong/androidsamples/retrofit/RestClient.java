@@ -33,7 +33,6 @@ public class RestClient {
 
             Retrofit client = new Retrofit.Builder()
                     .baseUrl(baseUrl)
-               //     .addConverter(String.class, new ToStringConverter())
                     .client(okClient)
                     .addConverterFactory(GsonConverterFactory.create())
                     .build();

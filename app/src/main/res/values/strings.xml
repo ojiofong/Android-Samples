@@ -15,7 +15,7 @@
     <string name="constraint_layout">Constraint Layout</string>
     <string name="recycler_play">RecyclerPlay</string>
     <string name="animation">Animation</string>
-    <string name="dagger">Dagger</string>
+    <string name="dagger">Dagger2</string>
     <string name="butter_knife">ButterKnife</string>
     <string name="bound_service">Bound Service</string>
     <string name="bluetooth">Bluetooth</string>
@@ -27,5 +27,5 @@
     <string name="view_pager">ViewPager</string>
     <string name="mvp">MVP</string>
     <string name="fragment_dialog_fragment">Fragment/DialogFragment</string>
-
+    <string name="mvvm_view_model_live_data">MVVM - ViewModel + LiveData</string>
 </resources>

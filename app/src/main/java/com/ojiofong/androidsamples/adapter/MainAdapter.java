@@ -9,13 +9,14 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;
+import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
+import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
 import com.ojiofong.androidsamples.ui.AnimationActivity;
 import com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity;
 import com.ojiofong.androidsamples.ui.BluetoothActivity;
 import com.ojiofong.androidsamples.ui.BoundServiceActivity;
 import com.ojiofong.androidsamples.ui.ButterKnifeActivity;
 import com.ojiofong.androidsamples.ui.ConstraintActivity;
-import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.ui.FragmentSampleActivity;
 import com.ojiofong.androidsamples.ui.InputDetectionActivity;
 import com.ojiofong.androidsamples.ui.MVPActivity;
@@ -105,6 +106,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             context.startActivity(new Intent(context, MVPActivity.class));
         } else if (title.equals(context.getString(R.string.fragment_dialog_fragment))) {
             context.startActivity(new Intent(context, FragmentSampleActivity.class));
+        } else if (title.equals(context.getString(R.string.mvvm_view_model_live_data))) {
+            context.startActivity(new Intent(context, MVVMActivity.class));
         }
 
     }

@@ -47,10 +47,9 @@ public class MainActivity extends AppCompatActivity {
         , getString(R.string.butter_knife), getString(R.string.bound_service), getString(R.string.bluetooth)
         , getString(R.string.web_rtc), getString(R.string.thread_pool_executor), getString(R.string.async_task_loader)
         , getString(R.string.input_detection), getString(R.string.retain_async_task), getString(R.string.view_pager)
-        , getString(R.string.mvp), getString(R.string.fragment_dialog_fragment)};
+        , getString(R.string.mvp), getString(R.string.fragment_dialog_fragment), getString(R.string.mvvm_view_model_live_data)};
 
         Arrays.sort(items);
-
         return items;
     }
 

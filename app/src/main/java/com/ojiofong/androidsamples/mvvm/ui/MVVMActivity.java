@@ -4,7 +4,6 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -13,17 +12,18 @@ import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.mvvm.api.MvvmAdapter;
 import com.ojiofong.androidsamples.mvvm.model.Repo;
 import com.ojiofong.androidsamples.mvvm.viewmodel.MvvmViewModel;
+import com.ojiofong.androidsamples.ui.BaseActivity;
 
 import java.util.List;
 
-public class MVVMActivity extends AppCompatActivity {
+public class MVVMActivity extends BaseActivity {
 
     private MvvmAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_mvvm);
+        setContentView(R.layout.activity_recycler_view);
         setTitle(R.string.mvvm_view_model_live_data);
         setupViews();
         MvvmViewModel mvvmViewModel = ViewModelProviders.of(this).get(MvvmViewModel.class);

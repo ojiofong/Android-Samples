@@ -28,4 +28,5 @@
     <string name="mvp">MVP</string>
     <string name="fragment_dialog_fragment">Fragment/DialogFragment</string>
     <string name="mvvm_view_model_live_data">MVVM - ViewModel + LiveData</string>
+    <string name="mvvm_room_live_data">MVVM - Room + LiveData</string>
 </resources>

@@ -11,6 +11,7 @@ import android.widget.TextView;
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
+import com.ojiofong.androidsamples.room.RoomActivity;
 import com.ojiofong.androidsamples.ui.AnimationActivity;
 import com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity;
 import com.ojiofong.androidsamples.ui.BluetoothActivity;
@@ -108,6 +109,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             context.startActivity(new Intent(context, FragmentSampleActivity.class));
         } else if (title.equals(context.getString(R.string.mvvm_view_model_live_data))) {
             context.startActivity(new Intent(context, MVVMActivity.class));
+        }else if (title.equals(context.getString(R.string.mvvm_room_live_data))) {
+            context.startActivity(new Intent(context, RoomActivity.class));
         }
 
     }

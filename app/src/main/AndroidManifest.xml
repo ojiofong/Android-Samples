@@ -59,7 +59,8 @@
         <!-- Service -->
         <service android:name=".service.TestService" />
 
-        <activity android:name=".mvvm.ui.MVVMActivity"></activity>
+        <activity android:name=".mvvm.ui.MVVMActivity" />
+        <activity android:name=".room.RoomActivity"></activity>
     </application>
 
 </manifest>

@@ -19,13 +19,11 @@ import retrofit2.Response;
  */
 
 public class MvvmViewModel extends ViewModel {
-    private List<Repo> repoList;
     private MutableLiveData<List<Repo>> repoLiveData = new MutableLiveData<>();
     private MutableLiveData<Boolean> toggleLoadingLiveData = new MutableLiveData<>();
 
     public void fetchData() {
-        if (repoList != null) {
-            repoLiveData.setValue(repoList);
+        if (repoLiveData.getValue() != null && !repoLiveData.getValue().isEmpty()) {
             return;
         }
 
@@ -34,8 +32,7 @@ public class MvvmViewModel extends ViewModel {
         MvvmApi.getGithubRepoApi().getRepos("ojiofong").enqueue(new Callback<List<Repo>>() {
             @Override
             public void onResponse(@NonNull Call<List<Repo>> call, @NonNull Response<List<Repo>> response) {
-                repoList = response.body();
-                repoLiveData.setValue(repoList);
+                repoLiveData.setValue(response.body());
                 toggleLoadingLiveData.setValue(false);
             }
 

@@ -41,7 +41,6 @@ dependencies {
     compile 'com.android.support.constraint:constraint-layout:1.1.0-beta4'
 
     // others
-
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.2.3'
     compile 'com.yqritc:recyclerview-flexibledivider:1.2.9'
@@ -49,11 +48,13 @@ dependencies {
     annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
     compile 'com.jakewharton:butterknife:8.4.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
-    compile 'com.squareup.retrofit2:retrofit:2.3.0'
-    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
     compile 'io.pristine:libjingle:9694@aar' // webRTC
     compile 'org.apache.commons:commons-lang3:3.4'
 //    compile project (':oj-color')
+
+    // Retrofit
+    compile 'com.squareup.retrofit2:retrofit:2.3.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.3.0'
 
     // LiveData and ViewModel
     compile "android.arch.lifecycle:extensions:1.0.0"

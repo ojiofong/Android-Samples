@@ -21,6 +21,7 @@
     <string name="bluetooth">Bluetooth</string>
     <string name="web_rtc">WebRTC</string>
     <string name="thread_pool_executor">ThreadPoolExecutor</string>
+    <string name="thread_pool_executor_future">ThreadPoolExecutor + Future</string>
     <string name="async_task_loader">AsyncTaskLoader</string>
     <string name="input_detection">InputDetection</string>
     <string name="retain_async_task">RetainAsyncTask</string>

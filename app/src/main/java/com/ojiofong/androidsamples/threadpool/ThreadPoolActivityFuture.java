@@ -1,23 +1,26 @@
-package com.ojiofong.androidsamples.ui;
+package com.ojiofong.androidsamples.threadpool;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;
+import com.ojiofong.androidsamples.ui.BaseActivity;
 
-import java.util.concurrent.BlockingDeque;
-import java.util.concurrent.Executor;
+import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
+/**
+ *
+ */
+public class ThreadPoolActivityFuture extends BaseActivity {
 
-public class ThreadPoolActivity2 extends AppCompatActivity {
-
+    private static final String TAG = ThreadPoolActivityFuture.class.getSimpleName();
     /*
      * Gets the number of available cores
      * (not always the same as the maximum number of cores)
@@ -30,52 +33,37 @@ public class ThreadPoolActivity2 extends AppCompatActivity {
     // Sets the Time Unit to Milliseconds
     private static final TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.MILLISECONDS;
 
-
     // Used to update UI with work progress
     private int count = 0;
 
-    private Runnable mRunnable = new Runnable() {
+    private Callable<Integer> mCallable = new Callable<Integer>() {
         @Override
-        public void run() {
-            // Do some work that takes 50 milliseconds
-            try {
+        public Integer call() throws Exception {
+            for (int i = 0; i < 100; i++) {
                 Thread.sleep(50);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
+                count = count + 1;
+                updateUI();
             }
-
-            // Update the UI with progress
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    count++;
-                    String msg = count < 100 ? "working " : "done ";
-                    updateStatus(msg + count);
-                }
-            });
-
+            return count;
         }
     };
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_threadpool);
+        setTitle(TAG);
     }
 
     // button click - performs work on a single thread
     public void buttonClickSingleThread(View view) {
         count = 0;
-        Executor mSingleThreadExecutor = Executors.newSingleThreadExecutor();
-
-        for (int i = 0; i < 100; i++) {
-            mSingleThreadExecutor.execute(mRunnable);
-        }
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        Future<Integer> future = executorService.submit(mCallable);
     }
 
     // button click - performs work using a thread pool
-    public void buttonClickThreadPool(View view) {
+    public void buttonClickThreadPool(View view) throws InterruptedException {
         count = 0;
         ThreadPoolExecutor mThreadPoolExecutor = new ThreadPoolExecutor(
                 NUMBER_OF_CORES + 5,   // Initial pool size
@@ -84,25 +72,20 @@ public class ThreadPoolActivity2 extends AppCompatActivity {
                 KEEP_ALIVE_TIME_UNIT,  // Sets the Time Unit for KEEP_ALIVE_TIME
                 new LinkedBlockingDeque<Runnable>());  // Work Queue
 
-        for (int i = 0; i < 100; i++) {
-            mThreadPoolExecutor.execute(mRunnable);
-        }
+        Future<Integer> future = mThreadPoolExecutor.submit(mCallable);
+        Thread.sleep(200);
+        future.cancel(true);
     }
 
-    private void updateStatus(String msg) {
-        ((TextView) findViewById(R.id.text)).setText(msg);
+    private void updateUI() {
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                String msg = count < 100 ? "working " : "done ";
+                msg = count + " " + msg;
+                ((TextView) findViewById(R.id.text)).setText(msg);
+            }
+        });
     }
-
-
-    private void test() {
-        Executor mExecutor = Executors.newSingleThreadExecutor();
-        mExecutor.execute(mRunnable);
-
-        
-
-        ExecutorService mExecutorService = Executors.newFixedThreadPool(10);
-        mExecutorService.execute(mRunnable);
-    }
-
 
 }

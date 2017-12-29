@@ -48,7 +48,8 @@
         <activity android:name=".ui.BoundServiceActivity" />
         <activity android:name=".ui.BluetoothActivity" />
         <activity android:name=".ui.WebRTCActivity" />
-        <activity android:name=".ui.ThreadPoolActivity" />
+        <activity android:name=".threadpool.ThreadPoolActivity" />
+        <activity android:name=".threadpool.ThreadPoolActivityFuture" />
         <activity android:name=".ui.AsyncTaskLoaderActivity" />
         <activity android:name=".ui.InputDetectionActivity" />
         <activity android:name=".ui.RetainAsyncTaskActivity" />

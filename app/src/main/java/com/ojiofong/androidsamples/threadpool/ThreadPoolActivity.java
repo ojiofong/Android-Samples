@@ -1,18 +1,15 @@
-package com.ojiofong.androidsamples.ui;
+package com.ojiofong.androidsamples.threadpool;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;
 
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingDeque;
-import java.util.concurrent.RejectedExecutionHandler;
 import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -33,7 +30,6 @@ public class ThreadPoolActivity extends AppCompatActivity {
 
     // Sets the Time Unit to Milliseconds
     private static final TimeUnit KEEP_ALIVE_TIME_UNIT = TimeUnit.MILLISECONDS;
-
 
     // Used to update UI with work progress
     private int count = 0;
@@ -70,19 +66,6 @@ public class ThreadPoolActivity extends AppCompatActivity {
        // init();
     }
 
-//    private void init() {
-//        BlockingDeque<Runnable> workQueue = new LinkedBlockingDeque<>();
-//        mThreadPoolExecutor = new ThreadPoolExecutor(NUMBER_OF_CORES + 4, NUMBER_OF_CORES + 8, KEEP_ALIVE_TIME, KEEP_ALIVE_TIME_UNIT, workQueue);
-//        mThreadPoolExecutor.setRejectedExecutionHandler(new RejectedExecutionHandler() {
-//            @Override
-//            public void rejectedExecution(Runnable runnable, ThreadPoolExecutor threadPoolExecutor) {
-//                // Retry mRunnable again
-//                Log.d(TAG, "rejected execution");
-//                threadPoolExecutor.execute(runnable);
-//            }
-//        });
-//    }
-
     // button click - performs work on a single thread
     public void buttonClickSingleThread(View view) {
         count = 0;
@@ -108,10 +91,8 @@ public class ThreadPoolActivity extends AppCompatActivity {
         }
     }
 
-
     private void updateStatus(String msg) {
         ((TextView) findViewById(R.id.text)).setText(msg);
     }
-
 
 }

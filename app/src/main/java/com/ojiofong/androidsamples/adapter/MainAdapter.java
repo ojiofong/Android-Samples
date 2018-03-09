@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;
+import com.ojiofong.androidsamples.bottomsheet.ui.BottomSheetActivity;
 import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
 import com.ojiofong.androidsamples.room.ui.RoomActivity;
@@ -114,6 +115,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             context.startActivity(new Intent(context, RoomActivity.class));
         }else if (title.equals(context.getString(R.string.thread_pool_executor_future))) {
             context.startActivity(new Intent(context, ThreadPoolActivityFuture.class));
+        }else if (title.equals(context.getString(R.string.bottom_sheet_fragment))) {
+            context.startActivity(new Intent(context, BottomSheetActivity.class));
         }
 
     }

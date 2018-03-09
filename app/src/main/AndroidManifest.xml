@@ -62,6 +62,7 @@
 
         <activity android:name=".mvvm.ui.MVVMActivity" />
         <activity android:name=".room.ui.RoomActivity"></activity>
+        <activity android:name=".bottomsheet.ui.BottomSheetActivity" />
     </application>
 
 </manifest>

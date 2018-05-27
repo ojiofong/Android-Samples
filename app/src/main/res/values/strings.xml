@@ -7,30 +7,6 @@
     <string name="off">Turn Off</string>
     <string name="List">List paired Devices</string>
     <string name="Find">Search new Devices / Cancel</string>
-
-    <!--Strings for main recyclerview-->
-    <string name="sensor">Sensor</string>
-    <string name="rx_java">RxJava</string>
-    <string name="video">Video</string>
-    <string name="constraint_layout">Constraint Layout</string>
-    <string name="recycler_play">RecyclerPlay</string>
-    <string name="animation">Animation</string>
-    <string name="dagger">Dagger2</string>
-    <string name="butter_knife">ButterKnife</string>
-    <string name="bound_service">Bound Service</string>
-    <string name="bluetooth">Bluetooth</string>
-    <string name="web_rtc">WebRTC</string>
-    <string name="thread_pool_executor">ThreadPoolExecutor</string>
-    <string name="thread_pool_executor_future">ThreadPoolExecutor + Future</string>
-    <string name="async_task_loader">AsyncTaskLoader</string>
-    <string name="input_detection">InputDetection</string>
-    <string name="retain_async_task">RetainAsyncTask</string>
-    <string name="view_pager">ViewPager</string>
-    <string name="mvp">MVP</string>
-    <string name="fragment_dialog_fragment">Fragment/DialogFragment</string>
-    <string name="mvvm_view_model_live_data">MVVM - ViewModel + LiveData</string>
-    <string name="mvvm_room_live_data">MVVM - Room + LiveData</string>
-    <string name="bottom_sheet_fragment">BottomSheetFragment</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
@@ -120,4 +96,29 @@
         "For example, position the FAB to one side of stream of a cards so the FAB won’t interfere "
         "when a user tries to pick up one of cards.\n\n"
     </string>
+
+    <!--Strings for main recyclerview-->
+    <string name="sensor">Sensor</string>
+    <string name="rx_java">RxJava</string>
+    <string name="video">Video</string>
+    <string name="constraint_layout">Constraint Layout</string>
+    <string name="recycler_play">RecyclerPlay</string>
+    <string name="animation">Animation</string>
+    <string name="dagger">Dagger2</string>
+    <string name="butter_knife">ButterKnife</string>
+    <string name="bound_service">Bound Service</string>
+    <string name="bluetooth">Bluetooth</string>
+    <string name="web_rtc">WebRTC</string>
+    <string name="thread_pool_executor">ThreadPoolExecutor</string>
+    <string name="thread_pool_executor_future">ThreadPoolExecutor + Future</string>
+    <string name="async_task_loader">AsyncTaskLoader</string>
+    <string name="input_detection">InputDetection</string>
+    <string name="retain_async_task">RetainAsyncTask</string>
+    <string name="view_pager">ViewPager</string>
+    <string name="mvp">MVP</string>
+    <string name="fragment_dialog_fragment">Fragment/DialogFragment</string>
+    <string name="mvvm_view_model_live_data">MVVM - ViewModel + LiveData</string>
+    <string name="mvvm_room_live_data">MVVM - Room + LiveData</string>
+    <string name="bottom_sheet_fragment">BottomSheetFragment</string>
+    <string name="work_manager">Work Manager</string>
 </resources>

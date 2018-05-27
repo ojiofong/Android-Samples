@@ -26,27 +26,26 @@ public class MainActivity extends AppCompatActivity {
         if (mRecyclerView != null) {
             mRecyclerView.setHasFixedSize(true);
             mRecyclerView.addItemDecoration(new CutomItemDecoration.DividerItemDecoration(this, R.drawable.divider));
-            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(this);
-            mRecyclerView.setLayoutManager(mLayoutManager);
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
             mRecyclerView.setAdapter(new MainAdapter(this, getItems()));
 //            mRecyclerView.setBackgroundColor(LibControl.OJI_GREEN);
 
         }
     }
 
-
     private String[] getItems() {
-        String[] items = {getString(R.string.sensor), getString(R.string.rx_java), getString(R.string.video)
+        String[] items = {
+                getString(R.string.sensor), getString(R.string.rx_java), getString(R.string.video)
                 , getString(R.string.constraint_layout), getString(R.string.animation), getString(R.string.dagger)
                 , getString(R.string.butter_knife), getString(R.string.bound_service), getString(R.string.bluetooth)
                 , getString(R.string.web_rtc), getString(R.string.thread_pool_executor), getString(R.string.async_task_loader)
                 , getString(R.string.input_detection), getString(R.string.retain_async_task), getString(R.string.view_pager)
                 , getString(R.string.mvp), getString(R.string.fragment_dialog_fragment), getString(R.string.mvvm_view_model_live_data)
                 , getString(R.string.mvvm_room_live_data), getString(R.string.thread_pool_executor_future)
-                , getString(R.string.bottom_sheet_fragment)};
+                , getString(R.string.bottom_sheet_fragment), getString(R.string.work_manager)
+        };
         Arrays.sort(items);
         return items;
     }
-
 
 }

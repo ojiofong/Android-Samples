@@ -56,13 +56,14 @@
         <activity android:name=".ui.ViewPagerActivity" />
         <activity android:name=".ui.MVPActivity" />
         <activity android:name=".ui.FragmentSampleActivity" />
+        <activity android:name=".mvvm.ui.MVVMActivity" />
+        <activity android:name=".room.ui.RoomActivity"></activity>
+        <activity android:name=".bottomsheet.ui.BottomSheetActivity" />
+        <activity android:name=".workmanager.ui.WorkManagerActivity" />
 
         <!-- Service -->
         <service android:name=".service.TestService" />
 
-        <activity android:name=".mvvm.ui.MVVMActivity" />
-        <activity android:name=".room.ui.RoomActivity"></activity>
-        <activity android:name=".bottomsheet.ui.BottomSheetActivity" />
     </application>
 
 </manifest>

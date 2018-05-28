@@ -13,6 +13,7 @@ import com.ojiofong.androidsamples.bottomsheet.ui.BottomSheetActivity;
 import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
 import com.ojiofong.androidsamples.room.ui.RoomActivity;
+import com.ojiofong.androidsamples.threadpool.ThreadPoolActivity;
 import com.ojiofong.androidsamples.threadpool.ThreadPoolActivityFuture;
 import com.ojiofong.androidsamples.ui.AnimationActivity;
 import com.ojiofong.androidsamples.ui.AsyncTaskLoaderActivity;
@@ -27,10 +28,10 @@ import com.ojiofong.androidsamples.ui.RecyclerPlayActivity;
 import com.ojiofong.androidsamples.ui.RetainAsyncTaskActivity;
 import com.ojiofong.androidsamples.ui.RxJavaActivity;
 import com.ojiofong.androidsamples.ui.SensorActivity;
-import com.ojiofong.androidsamples.threadpool.ThreadPoolActivity;
 import com.ojiofong.androidsamples.ui.VideoActivity;
 import com.ojiofong.androidsamples.ui.ViewPagerActivity;
 import com.ojiofong.androidsamples.ui.WebRTCActivity;
+import com.ojiofong.androidsamples.workmanager.ui.WorkManagerActivity;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> {
     private static final String TAG = MainAdapter.class.getSimpleName();
@@ -111,12 +112,14 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             context.startActivity(new Intent(context, FragmentSampleActivity.class));
         } else if (title.equals(context.getString(R.string.mvvm_view_model_live_data))) {
             context.startActivity(new Intent(context, MVVMActivity.class));
-        }else if (title.equals(context.getString(R.string.mvvm_room_live_data))) {
+        } else if (title.equals(context.getString(R.string.mvvm_room_live_data))) {
             context.startActivity(new Intent(context, RoomActivity.class));
-        }else if (title.equals(context.getString(R.string.thread_pool_executor_future))) {
+        } else if (title.equals(context.getString(R.string.thread_pool_executor_future))) {
             context.startActivity(new Intent(context, ThreadPoolActivityFuture.class));
-        }else if (title.equals(context.getString(R.string.bottom_sheet_fragment))) {
+        } else if (title.equals(context.getString(R.string.bottom_sheet_fragment))) {
             context.startActivity(new Intent(context, BottomSheetActivity.class));
+        } else if (title.equals(context.getString(R.string.work_manager))) {
+            context.startActivity(new Intent(context, WorkManagerActivity.class));
         }
 
     }

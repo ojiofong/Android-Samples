@@ -19,11 +19,11 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PagingInjection {
 
-    public static GithubSearchCache providesGithubSearchCache(Context context) {
+    private static GithubSearchCache providesGithubSearchCache(Context context) {
         return new GithubSearchCache(providesPagingDatabase(context), Executors.newSingleThreadExecutor());
     }
 
-    public static GithubSearchService providesGithubSearchService() {
+    private static GithubSearchService providesGithubSearchService() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(GithubSearchService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -31,7 +31,7 @@ public class PagingInjection {
         return retrofit.create(GithubSearchService.class);
     }
 
-    public static PagingDatabase providesPagingDatabase(Context context) {
+    private static PagingDatabase providesPagingDatabase(Context context) {
         return PagingDatabase.instance(context);
     }
 

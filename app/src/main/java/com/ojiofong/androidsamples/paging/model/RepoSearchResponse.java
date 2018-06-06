@@ -5,7 +5,7 @@ import java.util.List;
 public class RepoSearchResponse{
 	private int totalCount;
 	private boolean incompleteResults;
-	private List<ItemsItem> items;
+	private List<RepoItem> items;
 
 	public void setTotalCount(int totalCount){
 		this.totalCount = totalCount;
@@ -23,11 +23,11 @@ public class RepoSearchResponse{
 		return incompleteResults;
 	}
 
-	public void setItems(List<ItemsItem> items){
+	public void setItems(List<RepoItem> items){
 		this.items = items;
 	}
 
-	public List<ItemsItem> getItems(){
+	public List<RepoItem> getItems(){
 		return items;
 	}
 

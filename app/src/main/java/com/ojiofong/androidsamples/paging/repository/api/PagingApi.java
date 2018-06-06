@@ -1,4 +1,4 @@
-package com.ojiofong.androidsamples.paging.api;
+package com.ojiofong.androidsamples.paging.repository.api;
 
 import com.ojiofong.androidsamples.paging.model.RepoSearchResponse;
 
@@ -24,6 +24,7 @@ public class PagingApi {
         Call<RepoSearchResponse> searchRepos(@Query("q") String query,
                                              @Query("page") int page,
                                              @Query("per_page") int itemsPerPage);
+
     }
 
     public static GithubSearchService getGithubSearchService() {

@@ -121,4 +121,5 @@
     <string name="mvvm_room_live_data">MVVM - Room + LiveData</string>
     <string name="bottom_sheet_fragment">BottomSheetFragment</string>
     <string name="work_manager">Work Manager</string>
+    <string name="paging_list">Paging List</string>
 </resources>

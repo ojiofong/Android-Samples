@@ -12,6 +12,7 @@ import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.bottomsheet.ui.BottomSheetActivity;
 import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
+import com.ojiofong.androidsamples.paging.ui.PagingListActivity;
 import com.ojiofong.androidsamples.room.ui.RoomActivity;
 import com.ojiofong.androidsamples.threadpool.ThreadPoolActivity;
 import com.ojiofong.androidsamples.threadpool.ThreadPoolActivityFuture;
@@ -120,6 +121,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             context.startActivity(new Intent(context, BottomSheetActivity.class));
         } else if (title.equals(context.getString(R.string.work_manager))) {
             context.startActivity(new Intent(context, WorkManagerActivity.class));
+        } else if (title.equals(context.getString(R.string.paging_list))) {
+            context.startActivity(new Intent(context, PagingListActivity.class));
         }
 
     }

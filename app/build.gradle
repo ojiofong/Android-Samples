@@ -68,4 +68,8 @@ dependencies {
     def work_version = "1.0.0-alpha02"
     implementation "android.arch.work:work-runtime:$work_version" // use -ktx for Kotlin
 
+    // Paging library
+    def paging_version = "1.0.0"
+    implementation "android.arch.paging:runtime:$paging_version"
+
 }

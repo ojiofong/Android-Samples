@@ -60,6 +60,7 @@
         <activity android:name=".room.ui.RoomActivity"></activity>
         <activity android:name=".bottomsheet.ui.BottomSheetActivity" />
         <activity android:name=".workmanager.ui.WorkManagerActivity" />
+        <activity android:name=".paging.ui.PagingListActivity" />
 
         <!-- Service -->
         <service android:name=".service.TestService" />

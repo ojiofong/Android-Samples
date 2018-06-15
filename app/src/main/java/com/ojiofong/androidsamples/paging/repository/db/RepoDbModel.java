@@ -1,7 +1,12 @@
-package com.ojiofong.androidsamples.paging.model;
+package com.ojiofong.androidsamples.paging.repository.db;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
+
+import com.ojiofong.androidsamples.paging.model.RepoItem;
+
+import java.util.ArrayList;
+import java.util.List;
 
 // Cloned most of the generated POJO as Room Entity
 @Entity(tableName = RepoDbModel.TABLE_NAME)
@@ -11,7 +16,7 @@ public class RepoDbModel {
 
     @PrimaryKey
     private long id;
-    private int stargazersCount;
+    private int stars;
     private String pushedAt;
     private String subscriptionUrl;
     private String language;
@@ -80,12 +85,12 @@ public class RepoDbModel {
     private String nodeId;
     private int forksCount;
 
-    public void setStargazersCount(int stargazersCount) {
-        this.stargazersCount = stargazersCount;
+    public void setStars(int stars) {
+        this.stars = stars;
     }
 
-    public int getStargazersCount() {
-        return stargazersCount;
+    public int getStars() {
+        return stars;
     }
 
     public void setPushedAt(String pushedAt) {
@@ -636,7 +641,7 @@ public class RepoDbModel {
     public String toString() {
         return
                 "RepoItem{" +
-                        "stargazers_count = '" + stargazersCount + '\'' +
+                        "stargazers_count = '" + stars + '\'' +
                         ",pushed_at = '" + pushedAt + '\'' +
                         ",subscription_url = '" + subscriptionUrl + '\'' +
                         ",language = '" + language + '\'' +
@@ -706,5 +711,21 @@ public class RepoDbModel {
                         ",node_id = '" + nodeId + '\'' +
                         ",forks_count = '" + forksCount + '\'' +
                         "}";
+    }
+
+
+
+    public static List<RepoDbModel> convertFrom(List<RepoItem> repoItemList){
+        List<RepoDbModel> list = new ArrayList<>();
+        for (RepoItem repoItem: repoItemList){
+            // Get just the properties we need for now
+            RepoDbModel dbModel = new RepoDbModel();
+            dbModel.id = repoItem.getId();
+            dbModel.name = repoItem.getName();
+            dbModel.description = repoItem.getDescription();
+            dbModel.stars = repoItem.getStargazersCount();
+            list.add(dbModel);
+        }
+        return list;
     }
 }

@@ -1,13 +1,16 @@
 package com.ojiofong.androidsamples.paging.viewmodel;
 
 import android.app.Application;
+import android.arch.core.util.Function;
 import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
+import android.arch.lifecycle.MutableLiveData;
+import android.arch.lifecycle.Transformations;
 import android.support.annotation.NonNull;
 
-import com.ojiofong.androidsamples.paging.injection.PagingInjection;
-import com.ojiofong.androidsamples.paging.model.RepoItem;
+import com.ojiofong.androidsamples.paging.model.PagingResult;
 import com.ojiofong.androidsamples.paging.repository.PagingRepository;
+import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
 
 import java.util.List;
 
@@ -20,22 +23,42 @@ public class PagingViewModel extends AndroidViewModel {
 
     private static final String TAG = PagingViewModel.class.getSimpleName();
     private PagingRepository repository;
+    private MutableLiveData<String> queryLiveData;
+    private LiveData<PagingResult> pagingResultLiveData;
+    public LiveData<List<RepoDbModel>> reposLiveData;
+    public LiveData<String> errorLiveData;
 
     public PagingViewModel(@NonNull Application application) {
         super(application);
-        this.repository = PagingInjection.providesPagingRepository(application.getApplicationContext());
+        this.repository = PagingRepository.instance(application);
+        initLiveData();
+    }
+
+    private void initLiveData() {
+        this.queryLiveData = new MutableLiveData<>();
+        this.pagingResultLiveData = Transformations.map(queryLiveData, new Function<String, PagingResult>() {
+            @Override
+            public PagingResult apply(String input) {
+                return repository.search(input);
+            }
+        });
+        this.reposLiveData = Transformations.switchMap(pagingResultLiveData, new Function<PagingResult, LiveData<List<RepoDbModel>>>() {
+            @Override
+            public LiveData<List<RepoDbModel>> apply(PagingResult input) {
+                return input.data;
+            }
+        });
+        this.errorLiveData = Transformations.switchMap(pagingResultLiveData, new Function<PagingResult, LiveData<String>>() {
+            @Override
+            public LiveData<String> apply(PagingResult input) {
+                return input.error;
+            }
+        });
+
     }
 
     public void performSearch(String query) {
-        this.repository.performSearch(query);
-    }
-
-    public LiveData<List<RepoItem>> getLiveRepos() {
-        return this.repository.liveRepos;
-    }
-
-    public LiveData<String> getError() {
-        return this.repository.liveError;
+        this.queryLiveData.postValue(query);
     }
 
 }

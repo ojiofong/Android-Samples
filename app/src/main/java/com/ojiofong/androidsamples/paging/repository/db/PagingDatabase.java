@@ -5,8 +5,6 @@ import android.arch.persistence.room.Room;
 import android.arch.persistence.room.RoomDatabase;
 import android.content.Context;
 
-import com.ojiofong.androidsamples.paging.model.RepoDbModel;
-
 /**
  * Created by ojiofong on 6/5/18.
  * .

@@ -5,9 +5,6 @@ import android.content.Context;
 import com.ojiofong.androidsamples.paging.repository.GithubSearchCache;
 import com.ojiofong.androidsamples.paging.repository.PagingRepository;
 import com.ojiofong.androidsamples.paging.repository.api.PagingApi.GithubSearchService;
-import com.ojiofong.androidsamples.paging.repository.db.PagingDatabase;
-
-import java.util.concurrent.Executors;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
@@ -19,9 +16,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class PagingInjection {
 
-    private static GithubSearchCache providesGithubSearchCache(Context context) {
-        return new GithubSearchCache(providesPagingDatabase(context), Executors.newSingleThreadExecutor());
-    }
 
     private static GithubSearchService providesGithubSearchService() {
         Retrofit retrofit = new Retrofit.Builder()
@@ -31,12 +25,8 @@ public class PagingInjection {
         return retrofit.create(GithubSearchService.class);
     }
 
-    private static PagingDatabase providesPagingDatabase(Context context) {
-        return PagingDatabase.instance(context);
-    }
-
     public static PagingRepository providesPagingRepository(Context context) {
-        return new PagingRepository(providesGithubSearchService(), providesGithubSearchCache(context));
+        return new PagingRepository(providesGithubSearchService(), GithubSearchCache.instance(context));
     }
 
 }

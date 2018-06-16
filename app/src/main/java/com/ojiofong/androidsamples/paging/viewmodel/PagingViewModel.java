@@ -6,6 +6,7 @@ import android.arch.lifecycle.AndroidViewModel;
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.Transformations;
+import android.arch.paging.PagedList;
 import android.support.annotation.NonNull;
 
 import com.ojiofong.androidsamples.paging.model.PagingResult;
@@ -25,7 +26,7 @@ public class PagingViewModel extends AndroidViewModel {
     private PagingRepository repository;
     private MutableLiveData<String> queryLiveData;
     private LiveData<PagingResult> pagingResultLiveData;
-    public LiveData<List<RepoDbModel>> reposLiveData;
+    public LiveData<PagedList<RepoDbModel>> reposLiveData;
     public LiveData<String> errorLiveData;
 
     public PagingViewModel(@NonNull Application application) {
@@ -42,9 +43,9 @@ public class PagingViewModel extends AndroidViewModel {
                 return repository.search(input);
             }
         });
-        this.reposLiveData = Transformations.switchMap(pagingResultLiveData, new Function<PagingResult, LiveData<List<RepoDbModel>>>() {
+        this.reposLiveData = Transformations.switchMap(pagingResultLiveData, new Function<PagingResult, LiveData<PagedList<RepoDbModel>>>() {
             @Override
-            public LiveData<List<RepoDbModel>> apply(PagingResult input) {
+            public LiveData<PagedList<RepoDbModel>> apply(PagingResult input) {
                 return input.data;
             }
         });

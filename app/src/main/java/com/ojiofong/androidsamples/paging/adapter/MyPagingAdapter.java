@@ -1,7 +1,7 @@
 package com.ojiofong.androidsamples.paging.adapter;
 
+import android.arch.paging.PagedListAdapter;
 import android.support.annotation.NonNull;
-import android.support.v7.recyclerview.extensions.ListAdapter;
 import android.support.v7.util.DiffUtil;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -14,9 +14,11 @@ import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
 
 /**
  * Created by ojiofong on 6/5/18.
+ * .
+ * A PagedListAdapter that binds to a PagedList to allow infinitely loading data in chunks
  */
 
-public class MyPagingAdapter extends ListAdapter<RepoDbModel, MyPagingAdapter.PagingViewHolder> {
+public class MyPagingAdapter extends PagedListAdapter<RepoDbModel, MyPagingAdapter.PagingViewHolder> {
 
     public MyPagingAdapter(@NonNull DiffUtil.ItemCallback<RepoDbModel> diffCallback) {
         super(diffCallback);
@@ -32,9 +34,11 @@ public class MyPagingAdapter extends ListAdapter<RepoDbModel, MyPagingAdapter.Pa
     @Override
     public void onBindViewHolder(@NonNull PagingViewHolder holder, int position) {
         RepoDbModel repoItem = getItem(position);
-        holder.tvName.setText(repoItem.getName());
-        holder.tvDesc.setText(repoItem.getDescription());
-        holder.tvStars.setText("" + repoItem.getStars());
+        if (repoItem != null) {
+            holder.tvName.setText(repoItem.getName());
+            holder.tvDesc.setText(repoItem.getDescription());
+        }
+        holder.tvStars.setText("" + (position + 1));
     }
 
     public static class PagingViewHolder extends RecyclerView.ViewHolder {

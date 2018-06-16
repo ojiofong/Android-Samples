@@ -1,6 +1,7 @@
 package com.ojiofong.androidsamples.paging.repository.db;
 
 import android.arch.lifecycle.LiveData;
+import android.arch.paging.DataSource;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.OnConflictStrategy;
@@ -26,9 +27,9 @@ public interface RepoDao {
             "WHERE (name LIKE :queryString) " +
             "OR (description LIKE :queryString) " +
             "ORDER BY name COLLATE NOCASE ASC, stars DESC")
-    LiveData<List<RepoDbModel>> getReposByName(String queryString);
+    DataSource.Factory<Integer, RepoDbModel> getReposByName(String queryString);
 
     @Query("SELECT * FROM " + RepoDbModel.TABLE_NAME)
-    LiveData<List<RepoDbModel>> getAllRepos();
+    DataSource.Factory<Integer, RepoDbModel> getAllRepos();
 
 }

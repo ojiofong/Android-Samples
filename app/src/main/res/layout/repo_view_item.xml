@@ -72,6 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingVertical="5dp"
+        android:textSize="21sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/repo_forks"
         app:layout_constraintEnd_toStartOf="@id/forks"
         tools:text="30" />

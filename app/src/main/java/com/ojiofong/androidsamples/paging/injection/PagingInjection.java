@@ -2,7 +2,7 @@ package com.ojiofong.androidsamples.paging.injection;
 
 import android.content.Context;
 
-import com.ojiofong.androidsamples.paging.repository.GithubSearchCache;
+import com.ojiofong.androidsamples.paging.repository.PagingCache;
 import com.ojiofong.androidsamples.paging.repository.PagingRepository;
 import com.ojiofong.androidsamples.paging.repository.api.PagingApi.GithubSearchService;
 
@@ -26,7 +26,7 @@ public class PagingInjection {
     }
 
     public static PagingRepository providesPagingRepository(Context context) {
-        return new PagingRepository(providesGithubSearchService(), GithubSearchCache.instance(context));
+        return new PagingRepository(providesGithubSearchService(), PagingCache.instance(context));
     }
 
 }

@@ -1,6 +1,8 @@
 package com.ojiofong.androidsamples.paging.repository;
 
 import android.arch.lifecycle.LiveData;
+import android.arch.paging.DataSource;
+import android.arch.paging.PagedList;
 import android.content.Context;
 
 import com.ojiofong.androidsamples.paging.repository.db.PagingDatabase;
@@ -16,15 +18,15 @@ import java.util.concurrent.Executors;
  * .
  */
 
-public class GithubSearchCache {
+public class PagingCache {
 
     private ExecutorService executorService;
     private RepoDao repoDao;
-    private static GithubSearchCache INSTANCE;
+    private static PagingCache INSTANCE;
 
-    public static GithubSearchCache instance(Context context) {
+    public static PagingCache instance(Context context) {
         if (INSTANCE == null) {
-            INSTANCE = new GithubSearchCache(PagingDatabase.instance(context).getRepoDao(), Executors.newSingleThreadExecutor());
+            INSTANCE = new PagingCache(PagingDatabase.instance(context).getRepoDao(), Executors.newSingleThreadExecutor());
         }
         return INSTANCE;
     }
@@ -32,7 +34,7 @@ public class GithubSearchCache {
     /**
      * @param executorService Single Thread executor.
      */
-    public GithubSearchCache(RepoDao repoDao, ExecutorService executorService) {
+    public PagingCache(RepoDao repoDao, ExecutorService executorService) {
         this.executorService = executorService;
         this.repoDao = repoDao;
     }
@@ -47,13 +49,13 @@ public class GithubSearchCache {
         });
     }
 
-    public LiveData<List<RepoDbModel>> getLiveReposByName(String query) {
-        // squlite pattern = %query% i.e. contains the query
+    public DataSource.Factory<Integer, RepoDbModel> getLiveReposByName(String query) {
+        // sqlite pattern = %query% i.e. contains the query
         query = new StringBuilder(query.trim()).append('%').insert(0, '%').toString();
         return repoDao.getReposByName(query);
     }
 
-    public LiveData<List<RepoDbModel>> getAllRepos() {
+    public DataSource.Factory<Integer, RepoDbModel> getAllRepos() {
         return repoDao.getAllRepos();
     }
 

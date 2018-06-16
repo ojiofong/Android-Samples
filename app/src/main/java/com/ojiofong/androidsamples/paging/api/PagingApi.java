@@ -1,4 +1,4 @@
-package com.ojiofong.androidsamples.paging.repository.api;
+package com.ojiofong.androidsamples.paging.api;
 
 import com.ojiofong.androidsamples.paging.model.RepoSearchResponse;
 

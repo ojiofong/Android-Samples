@@ -13,7 +13,7 @@ import android.util.Log;
 
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.paging.adapter.MyPagingAdapter;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 import com.ojiofong.androidsamples.paging.viewmodel.PagingViewModel;
 
 /**

@@ -9,11 +9,9 @@ import android.arch.lifecycle.Transformations;
 import android.arch.paging.PagedList;
 import android.support.annotation.NonNull;
 
+import com.ojiofong.androidsamples.paging.api.PagingRepository;
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 import com.ojiofong.androidsamples.paging.model.PagingResult;
-import com.ojiofong.androidsamples.paging.repository.PagingRepository;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
-
-import java.util.List;
 
 /**
  * Created by ojiofong on 6/5/18.

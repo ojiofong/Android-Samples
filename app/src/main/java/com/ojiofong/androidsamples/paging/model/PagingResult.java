@@ -3,7 +3,7 @@ package com.ojiofong.androidsamples.paging.model;
 import android.arch.lifecycle.LiveData;
 import android.arch.paging.PagedList;
 
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 
 /**
  * Created by ojiofong on 6/14/18.

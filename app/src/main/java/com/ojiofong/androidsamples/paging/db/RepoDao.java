@@ -1,6 +1,5 @@
-package com.ojiofong.androidsamples.paging.repository.db;
+package com.ojiofong.androidsamples.paging.db;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.paging.DataSource;
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Insert;

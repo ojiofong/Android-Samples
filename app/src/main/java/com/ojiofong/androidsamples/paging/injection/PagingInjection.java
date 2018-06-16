@@ -2,9 +2,9 @@ package com.ojiofong.androidsamples.paging.injection;
 
 import android.content.Context;
 
-import com.ojiofong.androidsamples.paging.repository.PagingCache;
-import com.ojiofong.androidsamples.paging.repository.PagingRepository;
-import com.ojiofong.androidsamples.paging.repository.api.PagingApi.GithubSearchService;
+import com.ojiofong.androidsamples.paging.api.PagingApi.GithubSearchService;
+import com.ojiofong.androidsamples.paging.api.PagingCache;
+import com.ojiofong.androidsamples.paging.api.PagingRepository;
 
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;

@@ -1,13 +1,11 @@
-package com.ojiofong.androidsamples.paging.repository;
+package com.ojiofong.androidsamples.paging.api;
 
-import android.arch.lifecycle.LiveData;
 import android.arch.paging.DataSource;
-import android.arch.paging.PagedList;
 import android.content.Context;
 
-import com.ojiofong.androidsamples.paging.repository.db.PagingDatabase;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDao;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
+import com.ojiofong.androidsamples.paging.db.PagingDatabase;
+import com.ojiofong.androidsamples.paging.db.RepoDao;
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;

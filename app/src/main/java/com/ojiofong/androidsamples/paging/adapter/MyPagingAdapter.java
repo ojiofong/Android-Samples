@@ -10,7 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 
 /**
  * Created by ojiofong on 6/5/18.

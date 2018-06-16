@@ -1,4 +1,4 @@
-package com.ojiofong.androidsamples.paging.repository;
+package com.ojiofong.androidsamples.paging.api;
 
 import android.arch.lifecycle.LiveData;
 import android.arch.lifecycle.MutableLiveData;
@@ -8,12 +8,11 @@ import android.arch.paging.PagedList;
 import android.content.Context;
 import android.support.annotation.NonNull;
 
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 import com.ojiofong.androidsamples.paging.injection.PagingInjection;
 import com.ojiofong.androidsamples.paging.model.PagingResult;
 import com.ojiofong.androidsamples.paging.model.RepoItem;
 import com.ojiofong.androidsamples.paging.model.RepoSearchResponse;
-import com.ojiofong.androidsamples.paging.repository.api.MyPagingBoundaryCallback;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
 
 import java.util.List;
 
@@ -21,7 +20,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-import static com.ojiofong.androidsamples.paging.repository.api.PagingApi.GithubSearchService;
+import static com.ojiofong.androidsamples.paging.api.PagingApi.GithubSearchService;
 
 /**
  * Created by ojiofong on 6/5/18.
@@ -30,7 +29,6 @@ import static com.ojiofong.androidsamples.paging.repository.api.PagingApi.Github
  */
 
 public class PagingRepository {
-
 
     private static final int NETWORK_PAGE_SIZE = 50;
     private static final int DATABASE_PAGE_SIZE = 20; // chunks to load from db
@@ -41,7 +39,6 @@ public class PagingRepository {
     private int lastRequestedPage = 1;
     private boolean isRequestInProgress;
     public final MutableLiveData<String> error = new MutableLiveData<>();
-
 
     public PagingRepository(GithubSearchService service, PagingCache cache) {
         this.service = service;

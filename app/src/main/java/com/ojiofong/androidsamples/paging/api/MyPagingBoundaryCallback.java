@@ -1,11 +1,9 @@
-package com.ojiofong.androidsamples.paging.repository.api;
+package com.ojiofong.androidsamples.paging.api;
 
 import android.arch.paging.PagedList;
 import android.support.annotation.NonNull;
 
-import com.ojiofong.androidsamples.paging.repository.PagingCache;
-import com.ojiofong.androidsamples.paging.repository.PagingRepository;
-import com.ojiofong.androidsamples.paging.repository.db.RepoDbModel;
+import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 
 /**
  * Created by ojiofong on 6/16/18.

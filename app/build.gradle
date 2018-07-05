@@ -1,4 +1,6 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
 
@@ -40,17 +42,25 @@ dependencies {
     implementation "com.android.support:design:$supportLibraryVersion"
     implementation 'com.android.support.constraint:constraint-layout:1.1.0-beta4'
 
+    // kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "org.jetbrains.kotlin:kotlin-reflect:1.2.51"
+
     // others
     implementation 'io.reactivex:rxandroid:1.2.1'
     implementation 'io.reactivex:rxjava:1.2.3'
     implementation 'com.yqritc:recyclerview-flexibledivider:1.2.9'
-    implementation 'com.google.dagger:dagger:2.8'
-    annotationProcessor 'com.google.dagger:dagger-compiler:2.8'
-    implementation 'com.jakewharton:butterknife:8.4.0'
-    annotationProcessor 'com.jakewharton:butterknife-compiler:8.4.0'
     implementation 'io.pristine:libjingle:9694@aar' // webRTC
     implementation 'org.apache.commons:commons-lang3:3.4'
 //    compile project (':oj-color')
+
+    // ButterKnife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    kapt 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // Dagger 2
+    implementation 'com.google.dagger:dagger:2.11'
+    kapt 'com.google.dagger:dagger-compiler:2.11'
 
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.3.0'
@@ -72,4 +82,7 @@ dependencies {
     def paging_version = "1.0.0"
     implementation "android.arch.paging:runtime:$paging_version"
 
+}
+repositories {
+    mavenCentral()
 }

@@ -1,6 +1,7 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 
 buildscript {
+    ext.kotlin_version = '1.2.51'
     repositories {
         jcenter()
         maven { url 'https://maven.google.com' }
@@ -11,6 +12,7 @@ buildscript {
 
         // Added for dagger
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.8'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // to upload lib to jCenter
         //classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.4'

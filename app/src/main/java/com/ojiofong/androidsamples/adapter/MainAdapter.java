@@ -1,5 +1,6 @@
 package com.ojiofong.androidsamples.adapter;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
@@ -11,6 +12,7 @@ import android.widget.TextView;
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.bottomsheet.ui.BottomSheetActivity;
 import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
+import com.ojiofong.androidsamples.koin.ui.KoinMainFragment;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
 import com.ojiofong.androidsamples.paging.ui.PagingListActivity;
 import com.ojiofong.androidsamples.room.ui.RoomActivity;
@@ -75,6 +77,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
     private void launchActivity(String title) {
 
+        Activity activity = ((Activity) context);
+
         if (title.equals(context.getString(R.string.sensor))) {
             context.startActivity(new Intent(context, SensorActivity.class));
         } else if (title.equals(context.getString(R.string.rx_java))) {
@@ -123,6 +127,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             context.startActivity(new Intent(context, WorkManagerActivity.class));
         } else if (title.equals(context.getString(R.string.paging_list))) {
             context.startActivity(new Intent(context, PagingListActivity.class));
+        } else if (title.equals(context.getString(R.string.koin))) {
+            KoinMainFragment.Companion.launch(activity);
         }
 
     }

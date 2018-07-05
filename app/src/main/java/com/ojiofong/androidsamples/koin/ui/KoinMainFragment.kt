@@ -7,11 +7,20 @@ import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
+import butterknife.BindView
 import butterknife.ButterKnife
 import butterknife.OnClick
 import com.ojiofong.androidsamples.R
+import com.ojiofong.androidsamples.koin.model.MyAppManager
+import org.koin.android.ext.android.inject
 
 class KoinMainFragment : Fragment() {
+
+    val myAppManager: MyAppManager by inject()
+
+    @BindView(R.id.text_koin)
+    lateinit var textView: TextView
 
     @OnClick(R.id.button_signin_koin)
     fun onClickFakeSignInButton() {
@@ -33,6 +42,7 @@ class KoinMainFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val rootView = inflater.inflate(R.layout.fragment_koin_main, container, false)
         ButterKnife.bind(this, rootView)
+        textView.text = myAppManager.data
         return rootView
     }
 

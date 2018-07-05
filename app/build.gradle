@@ -82,6 +82,9 @@ dependencies {
     def paging_version = "1.0.0"
     implementation "android.arch.paging:runtime:$paging_version"
 
+    // Koin
+    implementation "org.koin:koin-android:0.9.3"
+
 }
 repositories {
     mavenCentral()

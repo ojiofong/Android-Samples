@@ -11,8 +11,12 @@ import android.widget.TextView
 import butterknife.BindView
 import butterknife.ButterKnife
 import com.ojiofong.androidsamples.R
+import com.ojiofong.androidsamples.koin.model.MyUserManager
+import org.koin.android.ext.android.inject
 
 class KoinSignedInFragment : Fragment() {
+
+    val myUserManager: MyUserManager by inject()
 
     @BindView(R.id.text_koin)
     lateinit var textView: TextView
@@ -33,7 +37,12 @@ class KoinSignedInFragment : Fragment() {
         val rootView = inflater.inflate(R.layout.fragment_koin_main, container, false)
         ButterKnife.bind(this, rootView)
         hideUnwantedViews(rootView)
-        setData()
+        textView.apply {
+            text = ""
+            append(myUserManager.data)
+            append("\n")
+            append(myUserManager.appManager.data)
+        }
         return rootView
     }
 
@@ -41,10 +50,6 @@ class KoinSignedInFragment : Fragment() {
         rootView?.findViewById<View>(R.id.edit_text_password_koin)?.visibility = View.GONE
         rootView?.findViewById<View>(R.id.edit_text_username_koin)?.visibility = View.GONE
         rootView?.findViewById<View>(R.id.button_signin_koin)?.visibility = View.GONE
-    }
-
-    private fun setData() {
-        textView.text = "Awesome Sauce!"
     }
 
 }

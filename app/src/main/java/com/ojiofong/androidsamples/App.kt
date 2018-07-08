@@ -10,6 +10,8 @@ import org.webrtc.PeerConnectionFactory
 
 class App : Application() {
 
+    var display = ""
+
     companion object {
         private val TAG = App::class.java.simpleName
     }
@@ -24,10 +26,6 @@ class App : Application() {
         val connState = PeerConnectionFactory.initializeAndroidGlobals(context, true, true, true, null)
         Log.d(TAG, "WebRTC PeerConnectionFactory state $connState")
         Toast.makeText(context, "WebRTC Connection state $connState", Toast.LENGTH_LONG).show()
-    }
-
-    fun getAppName(): String {
-        return resources.getString(R.string.app_name)
     }
 
 }

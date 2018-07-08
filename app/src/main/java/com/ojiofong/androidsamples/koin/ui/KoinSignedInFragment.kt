@@ -42,6 +42,8 @@ class KoinSignedInFragment : Fragment() {
             append(myUserManager.data)
             append("\n")
             append(myUserManager.appManager.data)
+            append("\n")
+            append(myUserManager.displayStuff)
         }
         return rootView
     }

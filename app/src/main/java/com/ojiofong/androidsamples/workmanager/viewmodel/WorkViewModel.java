@@ -12,6 +12,7 @@ import com.ojiofong.androidsamples.workmanager.api.MyWorker;
 import java.util.concurrent.TimeUnit;
 
 import androidx.work.Constraints;
+import androidx.work.ExistingWorkPolicy;
 import androidx.work.OneTimeWorkRequest;
 import androidx.work.PeriodicWorkRequest;
 import androidx.work.WorkManager;
@@ -31,7 +32,7 @@ public class WorkViewModel extends AndroidViewModel {
             .setRequiresStorageNotLow(true)
             .build();
 
-    public final WorkRequest oneTimeWorkRequest = new OneTimeWorkRequest.Builder(MyWorker.class)
+    public final OneTimeWorkRequest oneTimeWorkRequest = new OneTimeWorkRequest.Builder(MyWorker.class)
             .setConstraints(constraints)
             .addTag("optional_tag_here")
             .build();
@@ -45,7 +46,11 @@ public class WorkViewModel extends AndroidViewModel {
     }
 
     public void doSingleWork(){
-        WorkManager.getInstance().enqueue(oneTimeWorkRequest);
+//        WorkManager.getInstance().enqueue(oneTimeWorkRequest);
+        WorkManager.getInstance().beginUniqueWork("name", ExistingWorkPolicy.REPLACE, oneTimeWorkRequest)
+                .then(oneTimeWorkRequest)
+                .then(oneTimeWorkRequest)
+                .enqueue();
     }
 
 

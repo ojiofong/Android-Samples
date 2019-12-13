@@ -18,6 +18,7 @@ class NavigationActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_navigation)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        title = getString(R.string.navigation_component)
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

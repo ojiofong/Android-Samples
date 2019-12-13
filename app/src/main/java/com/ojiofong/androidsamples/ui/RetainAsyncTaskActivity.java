@@ -1,9 +1,9 @@
 package com.ojiofong.androidsamples.ui;
 
 import android.os.Bundle;
-import android.support.v4.app.FragmentManager;
-import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
+import androidx.fragment.app.FragmentManager;
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;

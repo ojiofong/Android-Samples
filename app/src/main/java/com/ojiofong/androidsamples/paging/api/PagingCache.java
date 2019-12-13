@@ -1,6 +1,6 @@
 package com.ojiofong.androidsamples.paging.api;
 
-import android.arch.paging.DataSource;
+import androidx.paging.DataSource;
 import android.content.Context;
 
 import com.ojiofong.androidsamples.paging.db.PagingDatabase;

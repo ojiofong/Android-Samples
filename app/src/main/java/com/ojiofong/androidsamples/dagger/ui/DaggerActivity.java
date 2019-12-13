@@ -1,7 +1,7 @@
 package com.ojiofong.androidsamples.dagger.ui;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.ojiofong.androidsamples.dagger.component.DaggerVehicleComponent;

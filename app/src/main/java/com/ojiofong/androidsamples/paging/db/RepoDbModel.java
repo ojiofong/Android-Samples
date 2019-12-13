@@ -1,7 +1,7 @@
 package com.ojiofong.androidsamples.paging.db;
 
-import android.arch.persistence.room.Entity;
-import android.arch.persistence.room.PrimaryKey;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
 import com.ojiofong.androidsamples.paging.model.RepoItem;
 

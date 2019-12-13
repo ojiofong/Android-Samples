@@ -1,7 +1,7 @@
 package com.ojiofong.androidsamples.paging.model;
 
-import android.arch.lifecycle.LiveData;
-import android.arch.paging.PagedList;
+import androidx.lifecycle.LiveData;
+import androidx.paging.PagedList;
 
 import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 

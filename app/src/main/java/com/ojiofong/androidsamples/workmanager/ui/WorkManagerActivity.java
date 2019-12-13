@@ -1,17 +1,17 @@
 package com.ojiofong.androidsamples.workmanager.ui;
 
-import android.arch.lifecycle.Observer;
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.workmanager.viewmodel.WorkViewModel;
 
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProviders;
+import androidx.work.WorkInfo;
 import androidx.work.WorkManager;
-import androidx.work.WorkStatus;
 
 /**
  * Created by ojiofong on 5/27/18.
@@ -27,11 +27,11 @@ public class WorkManagerActivity extends AppCompatActivity {
         setContentView(R.layout.activity_threadpool);
         WorkViewModel workViewModel = ViewModelProviders.of(this).get(WorkViewModel.class);
         workViewModel.doSingleWork();
-        WorkManager.getInstance().getStatusById(workViewModel.oneTimeWorkRequest.getId()).observe(this, new Observer<WorkStatus>() {
+        WorkManager.getInstance(this).getWorkInfoByIdLiveData(workViewModel.oneTimeWorkRequest.getId()).observe(this, new Observer<WorkInfo>() {
             @Override
-            public void onChanged(@Nullable WorkStatus workStatus) {
-                if (workStatus != null) {
-                    updateUI(workStatus.getState().name());
+            public void onChanged(@Nullable WorkInfo workInfo) {
+                if (workInfo != null) {
+                    updateUI(workInfo.getState().name());
                 }
             }
         });

@@ -1,7 +1,7 @@
 package com.ojiofong.androidsamples.paging.api;
 
-import android.arch.paging.PagedList;
-import android.support.annotation.NonNull;
+import androidx.paging.PagedList;
+import androidx.annotation.NonNull;
 
 import com.ojiofong.androidsamples.paging.db.RepoDbModel;
 

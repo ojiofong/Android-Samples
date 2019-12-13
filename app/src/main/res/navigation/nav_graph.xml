@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/navDestinationFragment1">
+
+    <fragment
+        android:id="@+id/navDestinationFragment1"
+        android:name="com.ojiofong.androidsamples.navigation.NavDestinationFragment1"
+        android:label="NavDestinationFragment1 Label"
+        app:defaultNavHost="true"
+        app:navGraph="@id/nav_graph"
+        tools:layout="@layout/fragment_navigation_component">
+        <action
+            android:id="@+id/action_navDestinationFragment1_to_blankFragment"
+            app:destination="@id/blankFragment"
+            app:enterAnim="@anim/nav_default_pop_enter_anim"
+            app:exitAnim="@anim/nav_default_pop_exit_anim" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/blankFragment"
+        android:name="com.ojiofong.androidsamples.navigation.BlankFragment"
+        android:label="fragment_blank"
+        tools:layout="@layout/fragment_blank">
+        <argument
+            android:name="displayText"
+            app:argType="string" />
+    </fragment>
+
+</navigation>

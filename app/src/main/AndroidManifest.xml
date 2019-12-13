@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.ojiofong.androidsamples">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -27,7 +28,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        tools:ignore="GoogleAppIndexingWarning">
         <activity android:name=".ui.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -57,10 +59,11 @@
         <activity android:name=".ui.MVPActivity" />
         <activity android:name=".ui.FragmentSampleActivity" />
         <activity android:name=".mvvm.ui.MVVMActivity" />
-        <activity android:name=".room.ui.RoomActivity"></activity>
+        <activity android:name=".room.ui.RoomActivity" />
         <activity android:name=".bottomsheet.ui.BottomSheetActivity" />
         <activity android:name=".workmanager.ui.WorkManagerActivity" />
         <activity android:name=".paging.ui.PagingListActivity" />
+        <activity android:name=".navigation.NavigationActivity" />
 
         <!-- Service -->
         <service android:name=".service.TestService" />

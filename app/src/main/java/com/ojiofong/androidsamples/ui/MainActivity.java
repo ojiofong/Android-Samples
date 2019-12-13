@@ -1,15 +1,16 @@
 package com.ojiofong.androidsamples.ui;
 
 import android.os.Bundle;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import com.ojiofong.androidsamples.CutomItemDecoration;
 import com.ojiofong.androidsamples.R;
 import com.ojiofong.androidsamples.adapter.MainAdapter;
 
 import java.util.Arrays;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = MainActivity.class.getSimpleName();
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
                 , getString(R.string.mvp), getString(R.string.fragment_dialog_fragment), getString(R.string.mvvm_view_model_live_data)
                 , getString(R.string.mvvm_room_live_data), getString(R.string.thread_pool_executor_future)
                 , getString(R.string.bottom_sheet_fragment), getString(R.string.work_manager), getString(R.string.paging_list)
-                , getString(R.string.koin)
+                , getString(R.string.koin), getString(R.string.navigation_component)
         };
         Arrays.sort(items);
         return items;

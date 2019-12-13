@@ -1,1 +1,1 @@
-include ':app', ':oj-color'
+include ':app'

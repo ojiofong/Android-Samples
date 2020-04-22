@@ -13,6 +13,7 @@ import com.ojiofong.androidsamples.dagger.ui.DaggerActivity;
 import com.ojiofong.androidsamples.koin.ui.KoinMainFragment;
 import com.ojiofong.androidsamples.mvvm.ui.MVVMActivity;
 import com.ojiofong.androidsamples.navigation.NavigationActivity;
+import com.ojiofong.androidsamples.notification.NotificationFragment;
 import com.ojiofong.androidsamples.paging.ui.PagingListActivity;
 import com.ojiofong.androidsamples.room.ui.RoomActivity;
 import com.ojiofong.androidsamples.threadpool.ThreadPoolActivity;
@@ -131,6 +132,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
             KoinMainFragment.Companion.launch(activity);
         } else if (title.equals(this.activity.getString(R.string.navigation_component))) {
             this.activity.startActivity(new Intent(this.activity, NavigationActivity.class));
+        }else if (title.equals(this.activity.getString(R.string.notification))) {
+            NotificationFragment.launch(activity.getSupportFragmentManager());
         }
 
     }

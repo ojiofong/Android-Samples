@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
                 , getString(R.string.mvvm_room_live_data), getString(R.string.thread_pool_executor_future)
                 , getString(R.string.bottom_sheet_fragment), getString(R.string.work_manager), getString(R.string.paging_list)
                 , getString(R.string.koin), getString(R.string.navigation_component)
+                , getString(R.string.notification)
         };
         Arrays.sort(items);
         return items;

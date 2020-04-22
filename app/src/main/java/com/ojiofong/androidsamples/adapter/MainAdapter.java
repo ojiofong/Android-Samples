@@ -1,7 +1,6 @@
 package com.ojiofong.androidsamples.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -36,17 +35,18 @@ import com.ojiofong.androidsamples.ui.ViewPagerActivity;
 import com.ojiofong.androidsamples.ui.WebRTCActivity;
 import com.ojiofong.androidsamples.workmanager.ui.WorkManagerActivity;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> {
     private static final String TAG = MainAdapter.class.getSimpleName();
 
     private String[] items;
-    private Context context;
+    private AppCompatActivity activity;
 
-    public MainAdapter(Context context, String[] items) {
+    public MainAdapter(AppCompatActivity activity, String[] items) {
         this.items = items;
-        this.context = context;
+        this.activity = activity;
     }
 
     @Override
@@ -79,60 +79,58 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.MyViewHolder> 
 
     private void launchActivity(String title) {
 
-        Activity activity = ((Activity) context);
-
-        if (title.equals(context.getString(R.string.sensor))) {
-            context.startActivity(new Intent(context, SensorActivity.class));
-        } else if (title.equals(context.getString(R.string.rx_java))) {
-            context.startActivity(new Intent(context, RxJavaActivity.class));
-        } else if (title.equals(context.getString(R.string.video))) {
-            context.startActivity(new Intent(context, VideoActivity.class));
-        } else if (title.equals(context.getString(R.string.constraint_layout))) {
-            context.startActivity(new Intent(context, ConstraintActivity.class));
-        } else if (title.equals(context.getString(R.string.recycler_play))) {
-            context.startActivity(new Intent(context, RecyclerPlayActivity.class));
-        } else if (title.equals(context.getString(R.string.animation))) {
-            context.startActivity(new Intent(context, AnimationActivity.class));
-        } else if (title.equals(context.getString(R.string.dagger))) {
-            context.startActivity(new Intent(context, DaggerActivity.class));
-        } else if (title.equals(context.getString(R.string.butter_knife))) {
-            context.startActivity(new Intent(context, ButterKnifeActivity.class));
-        } else if (title.equals(context.getString(R.string.bound_service))) {
-            context.startActivity(new Intent(context, BoundServiceActivity.class));
-        } else if (title.equals(context.getString(R.string.bluetooth))) {
-            context.startActivity(new Intent(context, BluetoothActivity.class));
-        } else if (title.equals(context.getString(R.string.web_rtc))) {
-            context.startActivity(new Intent(context, WebRTCActivity.class));
-        } else if (title.equals(context.getString(R.string.thread_pool_executor))) {
-            context.startActivity(new Intent(context, ThreadPoolActivity.class));
-        } else if (title.equals(context.getString(R.string.async_task_loader))) {
-            context.startActivity(new Intent(context, AsyncTaskLoaderActivity.class));
-        } else if (title.equals(context.getString(R.string.input_detection))) {
-            context.startActivity(new Intent(context, InputDetectionActivity.class));
-        } else if (title.equals(context.getString(R.string.retain_async_task))) {
-            context.startActivity(new Intent(context, RetainAsyncTaskActivity.class));
-        } else if (title.equals(context.getString(R.string.view_pager))) {
-            context.startActivity(new Intent(context, ViewPagerActivity.class));
-        } else if (title.equals(context.getString(R.string.mvp))) {
-            context.startActivity(new Intent(context, MVPActivity.class));
-        } else if (title.equals(context.getString(R.string.fragment_dialog_fragment))) {
-            context.startActivity(new Intent(context, FragmentSampleActivity.class));
-        } else if (title.equals(context.getString(R.string.mvvm_view_model_live_data))) {
-            context.startActivity(new Intent(context, MVVMActivity.class));
-        } else if (title.equals(context.getString(R.string.mvvm_room_live_data))) {
-            context.startActivity(new Intent(context, RoomActivity.class));
-        } else if (title.equals(context.getString(R.string.thread_pool_executor_future))) {
-            context.startActivity(new Intent(context, ThreadPoolActivityFuture.class));
-        } else if (title.equals(context.getString(R.string.bottom_sheet_fragment))) {
-            context.startActivity(new Intent(context, BottomSheetActivity.class));
-        } else if (title.equals(context.getString(R.string.work_manager))) {
-            context.startActivity(new Intent(context, WorkManagerActivity.class));
-        } else if (title.equals(context.getString(R.string.paging_list))) {
-            context.startActivity(new Intent(context, PagingListActivity.class));
-        } else if (title.equals(context.getString(R.string.koin))) {
+        if (title.equals(this.activity.getString(R.string.sensor))) {
+            this.activity.startActivity(new Intent(this.activity, SensorActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.rx_java))) {
+            this.activity.startActivity(new Intent(this.activity, RxJavaActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.video))) {
+            this.activity.startActivity(new Intent(this.activity, VideoActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.constraint_layout))) {
+            this.activity.startActivity(new Intent(this.activity, ConstraintActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.recycler_play))) {
+            this.activity.startActivity(new Intent(this.activity, RecyclerPlayActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.animation))) {
+            this.activity.startActivity(new Intent(this.activity, AnimationActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.dagger))) {
+            this.activity.startActivity(new Intent(this.activity, DaggerActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.butter_knife))) {
+            this.activity.startActivity(new Intent(this.activity, ButterKnifeActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.bound_service))) {
+            this.activity.startActivity(new Intent(this.activity, BoundServiceActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.bluetooth))) {
+            this.activity.startActivity(new Intent(this.activity, BluetoothActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.web_rtc))) {
+            this.activity.startActivity(new Intent(this.activity, WebRTCActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.thread_pool_executor))) {
+            this.activity.startActivity(new Intent(this.activity, ThreadPoolActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.async_task_loader))) {
+            this.activity.startActivity(new Intent(this.activity, AsyncTaskLoaderActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.input_detection))) {
+            this.activity.startActivity(new Intent(this.activity, InputDetectionActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.retain_async_task))) {
+            this.activity.startActivity(new Intent(this.activity, RetainAsyncTaskActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.view_pager))) {
+            this.activity.startActivity(new Intent(this.activity, ViewPagerActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.mvp))) {
+            this.activity.startActivity(new Intent(this.activity, MVPActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.fragment_dialog_fragment))) {
+            this.activity.startActivity(new Intent(this.activity, FragmentSampleActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.mvvm_view_model_live_data))) {
+            this.activity.startActivity(new Intent(this.activity, MVVMActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.mvvm_room_live_data))) {
+            this.activity.startActivity(new Intent(this.activity, RoomActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.thread_pool_executor_future))) {
+            this.activity.startActivity(new Intent(this.activity, ThreadPoolActivityFuture.class));
+        } else if (title.equals(this.activity.getString(R.string.bottom_sheet_fragment))) {
+            this.activity.startActivity(new Intent(this.activity, BottomSheetActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.work_manager))) {
+            this.activity.startActivity(new Intent(this.activity, WorkManagerActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.paging_list))) {
+            this.activity.startActivity(new Intent(this.activity, PagingListActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.koin))) {
             KoinMainFragment.Companion.launch(activity);
-        } else if (title.equals(context.getString(R.string.navigation_component))) {
-            context.startActivity(new Intent(context, NavigationActivity.class));
+        } else if (title.equals(this.activity.getString(R.string.navigation_component))) {
+            this.activity.startActivity(new Intent(this.activity, NavigationActivity.class));
         }
 
     }
